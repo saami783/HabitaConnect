@@ -100,9 +100,13 @@ class AnnounceController extends Controller
     /**
      * Remove the specified resource from storage.
      * @throws AuthorizationException
+     * @throws \Throwable
      */
-    public function destroy(Announce $announce): void
+    public function destroy(Announce $announce)
     {
         $this->authorize('delete', $announce);
+        $announce->deleteOrFail();
+
+        return redirect()->route('announces.index')->with('success', 'Announce deleted successfully.');
     }
 }

@@ -17,11 +17,16 @@
                 <p class="card-text">Utilisateur : {{ $announce->user->name }}</p>
             </div>
             @auth
-
                 @if(auth()->user()->id == $announce->user_id)
                     <div class="card-footer text-muted">
                         <a href="{{ route('announces.edit', $announce) }}" class="btn btn-primary">Modifier</a>
-                        <a href="{{ route('announces.destroy', $announce) }}" class="btn btn-danger">Supprimer</a>
+
+                        {{-- Formulaire de suppression --}}
+                        <form action="{{ route('announces.destroy', $announce) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
                     </div>
                 @endif
             @endauth

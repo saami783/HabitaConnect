@@ -4,8 +4,8 @@
     @extends('welcome')
 </header>
 
+<br><br>
     <div class="container">
-        <h1>Edit Announcement</h1>
 
         {{-- Assurez-vous que l'action pointe vers la route 'annonces.update' et utilise la méthode PATCH --}}
         <form method="POST" action="{{ route('announces.update', $announce) }}">
@@ -47,6 +47,6 @@
             </div>
 
             {{-- Bouton de soumission --}}
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
         </form>
     </div>

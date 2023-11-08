@@ -5,7 +5,7 @@
 </header>
 
 <div class="container">
-    <h1>Create New Announcement</h1>
+    <br><br>
     <form method="POST" action="{{ route('announces.store') }}">
         @csrf {{-- CSRF protection field --}}
 
@@ -38,7 +38,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Envoyer mon annonce</button>
     </form>
 </div>
 

@@ -35,6 +35,13 @@ class AnnouncePolicy
     }
 
     /**
+     * Determine whether the user can edit the model.
+     */
+    public function edit(User $user) : bool {
+        return in_array('ROLE_BUSINESS', $user->role) && $user->id === $announce->user_id;
+    }
+
+    /**
      * Determine whether the user can update the model.
      */
     public function update(User $user, Announce $announce): bool

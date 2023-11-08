@@ -9,6 +9,14 @@ class Announce extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'address',
+        'price_per_night',
+        'type',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

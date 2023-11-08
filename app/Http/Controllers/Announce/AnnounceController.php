@@ -60,15 +60,19 @@ class AnnounceController extends Controller
         $announce->user_id = auth()->id();
         $announce->save();
 
-        return redirect()->route('annonces.index')->with('success', 'Announce created successfully!');
+        return redirect()->route('announces.index')->with('success', 'Announce created successfully!');
     }
 
     /**
      * Show the form for editing the specified resource.
+     * @throws AuthorizationException
      */
     public function edit(Announce $announce)
     {
-        //
+        // Si l'utilisateur a le droit de modifier cette annonce
+        $this->authorize('update', $announce);
+
+        return view('announces.edit', compact('announce'));
     }
 
     /**
@@ -78,6 +82,19 @@ class AnnounceController extends Controller
     public function update(Request $request, Announce $announce)
     {
         $this->authorize('update', $announce);
+
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'address' => 'required|max:255',
+            'price_per_night' => 'required|numeric',
+            'type' => 'required|in:house,apartment,room',
+        ]);
+
+        // Mets à jour l'annonce avec les données validées
+        $announce->update($validatedData);
+
+        return redirect()->route('announces.show', $announce)->with('success', 'Announce updated successfully.');
     }
 
     /**

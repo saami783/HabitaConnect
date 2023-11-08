@@ -6,7 +6,7 @@
 
 <div class="container">
     <h1>Create New Announcement</h1>
-    <form method="POST" action="{{ route('annonces.store') }}">
+    <form method="POST" action="{{ route('announces.store') }}">
         @csrf {{-- CSRF protection field --}}
 
         <div class="form-group">

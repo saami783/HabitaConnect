@@ -53,10 +53,24 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+        {{-- Ajout des boutons radio pour le rôle --}}
+        <div class="mt-4">
+            <x-input-label for="role" :value="__('Je souhaite :')" />
+            <div class="flex items-center">
+                <x-text-input id="role_user" class="mr-2" type="radio" name="role" value="ROLE_USER" checked />
+                <x-input-label for="role_user" :value="__('Louer un logement')" class="mr-4" />
+                <x-text-input id="role_business" class="mr-2" type="radio" name="role" value="ROLE_BUSINESS" />
+                <x-input-label for="role_business" :value="__('Poster des annonces')" />
+            </div>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
+
+
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
                 {{ __('Vous avez déjà un compte?') }}
             </a>
+
 
             <x-primary-button class="ml-4">
                 {{ __('Inscription') }}

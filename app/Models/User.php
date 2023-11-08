@@ -44,6 +44,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'role' => 'array',
     ];
 
     /**
@@ -55,6 +56,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CustomResetPassword($token));
+    }
+
+    public function setRoleAttribute($value)
+    {
+        $this->attributes['role'] = json_encode($value ?? ['ROLE_USER']);
     }
 
     public function annonces()

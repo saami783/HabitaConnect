@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Announce;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Announce\AnnounceController::class, 'index'])->name('announce.index');
+
+// Afficher le formulaire de création d'une nouvelle annonce
+Route::get('/annonces/create', [Announce\AnnounceController::class, 'create'])
+    ->middleware(['auth', 'verified'])->name('annonces.create');
+
+// Enregistrer une nouvelle annonce
+Route::post('/annonces', [Announce\AnnounceController::class, 'store'])
+    ->middleware(['auth', 'verified'])->name('annonces.store');
+
+// Afficher une annonce spécifique
+Route::get('/annonces/{announce}', [Announce\AnnounceController::class, 'show'])->name('annonces.show');
+
+// Afficher le formulaire d'édition d'une annonce spécifique
+Route::get('/annonces/{announce}/edit', [Announce\AnnounceController::class, 'edit'])
+    ->middleware(['auth', 'verified'])->name('annonces.edit');
+
+// Mettre à jour une annonce spécifique
+Route::patch('/annonces/{announce}', [Announce\AnnounceController::class, 'update'])
+    ->middleware(['auth', 'verified'])->name('annonces.update');
+
+// Supprimer une annonce spécifique
+Route::delete('/annonces/{announce}', [Announce\AnnounceController::class, 'destroy'])
+    ->middleware(['auth', 'verified'])->name('annonces.destroy');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

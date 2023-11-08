@@ -29,4 +29,5 @@ class Announce extends Model
         return $this->belongsToMany(Equipment::class, 'announce_equipment');
     }
 
+
 }

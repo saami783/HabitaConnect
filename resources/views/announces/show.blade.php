@@ -1,7 +1,7 @@
 {{-- Assurez-vous que le layout 'welcome' contient les éléments Bootstrap nécessaires --}}
 @extends('welcome')
 
-<br><br><br>
+<br><br>
 
     <div class="container mt-4">
         <div class="card">

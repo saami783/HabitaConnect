@@ -37,5 +37,9 @@ class Announce extends Model
         return $this->belongsToMany(Equipment::class, 'announce_equipment');
     }
 
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
 
 }

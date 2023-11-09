@@ -18,6 +18,7 @@ class AnnounceController extends Controller
     public function index()
     {
         $announces = Announce::all();
+
         return view('announces.index', compact('announces'));
     }
 
@@ -26,6 +27,7 @@ class AnnounceController extends Controller
      */
     public function show(Announce $announce)
     {
+        $announce->load('files');
         return view('announces.show', ['announce' => $announce]);
     }
 
@@ -51,7 +53,7 @@ class AnnounceController extends Controller
             'address' => 'required|max:255',
             'price_per_night' => 'required|numeric',
             'type' => 'required|in:house,apartment,room',
-            'files' => 'required|array', // files doit être un tableau
+            'files' => 'required|array',
             'files.*' => 'image|mimes:jpg,jpeg,png|max:2048', // chaque fichier doit être une image
 
         ]);

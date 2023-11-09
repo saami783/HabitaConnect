@@ -15,7 +15,20 @@
                 <p class="card-text">Prix par nuit : {{ number_format($announce->price_per_night, 2) }} €</p>
                 <p class="card-text">Type de logement : {{ $announce->type }}</p>
                 <p class="card-text">Utilisateur : {{ $announce->user->name }}</p>
+
+                @if($announce->files->isEmpty())
+                    <br>
+                    <div class="alert alert-danger">
+                        <p> Aucune images trouvées pour cette annonce. </p>
+                    </div>
+                @else
+                    @foreach($announce->files as $file)
+                        <img src="{{ asset($file->file_path) }}" alt="Announce Image">
+                    @endforeach
+                @endif
+
             </div>
+
             @auth
                 @if(auth()->user()->id == $announce->user_id)
                     <div class="card-footer text-muted">

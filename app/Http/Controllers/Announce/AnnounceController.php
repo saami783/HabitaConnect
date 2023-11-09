@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Announce;
 
 use App\Http\Controllers\Controller;
 use App\Models\Announce;
+use App\Models\File;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AnnounceController extends Controller
 {
@@ -49,7 +51,12 @@ class AnnounceController extends Controller
             'address' => 'required|max:255',
             'price_per_night' => 'required|numeric',
             'type' => 'required|in:house,apartment,room',
+            'files' => 'required|array', // files doit être un tableau
+            'files.*' => 'image|mimes:jpg,jpeg,png|max:2048', // chaque fichier doit être une image
+
         ]);
+
+        $user = Auth::id();
 
         $announce = new Announce;
         $announce->title = $request->title;
@@ -60,6 +67,22 @@ class AnnounceController extends Controller
         $announce->user_id = auth()->id();
         $announce->save();
 
+        $fileModel = new File;
+
+        if($request->hasfile('files')) {
+            foreach ($request->file('files') as $file) {
+                $fileName = time().'_'.$file->getClientOriginalName();
+                $filePath = $file->storeAs('uploads' . '/annonces/' . 'users/' . "user_$user" . "/annonces_$announce->id", $fileName, 'public');
+
+                $fileModel = new File;
+                $fileModel->name = $fileName;
+                $fileModel->file_path = '/storage/' . $filePath;
+//                $fileModel->announce_id = $announce->id;
+                $fileModel->saveOrFail();
+            }
+            return back()
+                ->with('success','File has been uploaded.');
+        }
         return redirect()->route('announces.index')->with('success', 'Announce created successfully!');
     }
 

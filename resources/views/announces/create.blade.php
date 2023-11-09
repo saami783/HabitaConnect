@@ -6,7 +6,7 @@
 
 <div class="container">
     <br><br>
-    <form method="POST" action="{{ route('announces.store') }}">
+    <form method="POST" action="{{ route('announces.store') }}" enctype="multipart/form-data">
         @csrf {{-- CSRF protection field --}}
 
         <div class="form-group">
@@ -36,6 +36,28 @@
                 <option value="apartment">Apartment</option>
                 <option value="room">Room</option>
             </select>
+        </div>
+
+        <div class="container mt-5">
+                <h3 class="text-center mb-5">Test images</h3>
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            <div class="form-group">
+                <label for="file">Photos de l'annonce</label>
+                <input type="file" class="form-control" id="file" name="files[]" multiple>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Envoyer mon annonce</button>

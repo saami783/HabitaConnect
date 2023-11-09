@@ -77,7 +77,7 @@ class AnnounceController extends Controller
                 $fileModel = new File;
                 $fileModel->name = $fileName;
                 $fileModel->file_path = '/storage/' . $filePath;
-//                $fileModel->announce_id = $announce->id;
+                $fileModel->announce_id = $announce->id;
                 $fileModel->saveOrFail();
             }
             return back()

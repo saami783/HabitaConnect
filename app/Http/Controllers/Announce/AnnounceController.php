@@ -17,7 +17,7 @@ class AnnounceController extends Controller
      */
     public function index()
     {
-        $announces = Announce::all();
+        $announces = Announce::with('files')->paginate(10);
 
         return view('announces.index', compact('announces'));
     }

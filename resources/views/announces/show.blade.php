@@ -61,7 +61,11 @@
 
                             <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}" autocomplete="off">
 
+                            @if($announce->is_disponible)
                             <button type="submit" class="btn btn-primary">Réserver</button>
+                            @else
+                                <p style="color: red;"> Impossible de passer une réservation pour cette annonce car elle est insponible.</p>
+                            @endif
                         </form>
                     </div>
                 @endif

@@ -41,8 +41,11 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-
         $announce = Announce::find($request->announce_id);
+
+        if (!$announce->is_disponible) {
+            return redirect()->back()->with('error', 'Impossible de réserver une annonce indisponible.');
+        }
 
         $validatedData = $request->validate([
             'begin_at' => 'required|date',
@@ -64,6 +67,9 @@ class ReservationController extends Controller
         $reservation->price = $daysDifference * $announce->price_per_night;
 
         $reservation->save();
+
+        $announce->is_disponible = false;
+        $announce->save();
 
         return redirect()->route('reservations.index')->with('success', 'Réservation créée avec succès!');
     }

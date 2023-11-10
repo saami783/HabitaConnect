@@ -18,5 +18,7 @@
             <input type='hidden' name="reservation" value="{{ $reservation->id }}">
             <button class="btn btn-success" type="submit" id="checkout-live-button">Payer</button>
         </form>
+    @else
+        <p> <a href="{{ route('generatePdf', $reservation) }}"> Ma facture </a> </p>
     @endif
 @endsection

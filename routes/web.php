@@ -44,7 +44,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
     Route::get('/success/{token}', 'App\Http\Controllers\StripeController@success')->name('success');
 
-    Route::get('/facture/{reservation}/pdf', [PdfController::class, 'generatePdf']);
+    Route::get('/facture/{reservation}/pdf', [PdfController::class, 'generatePdf'])->name('generatePdf');
 });
 
 Route::get('/dashboard', function () {

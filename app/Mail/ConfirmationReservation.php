@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Mail;
+namespace App\Mail;
 
 use App\Models\Announce;
+use App\Models\Facture;
 use App\Models\Reservation;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Auth;
 
 class ConfirmationReservation extends Mailable
 {
@@ -15,10 +17,12 @@ class ConfirmationReservation extends Mailable
 
     private Reservation $reservation;
     private Announce $announce;
+    private Facture $facture;
 
     public function __construct(Reservation $reservation)
     {
         $announce = Announce::find($reservation->announce_id);
+        $this->facture = $reservation->facture;
         $this->reservation = $reservation;
         $this->announce = $announce;
     }
@@ -27,8 +31,11 @@ class ConfirmationReservation extends Mailable
     {
         return $this->view('templates.mails.confirmation_reservation')
             ->with([
-                'reservationDetails' => $this->reservation,
-                'announceDetails' => $this->announce
+                'reservation' => $this->reservation,
+                'announce' => $this->announce,
+                'user' => Auth::getUser(),
+                'date' => new \DateTime(),
+                'facture' => $this->facture
             ]);
     }
 

@@ -30,4 +30,9 @@ class Reservation extends Model
     {
         return $this->belongsTo(Announce::class);
     }
+
+    public function facture()
+    {
+        return $this->hasOne(Facture::class);
+    }
 }

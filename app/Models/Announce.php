@@ -44,4 +44,8 @@ class Announce extends Model
         return $this->hasMany(File::class);
     }
 
+    public function factures()
+    {
+        return $this->hasMany(Facture::class, 'announce_id');
+    }
 }

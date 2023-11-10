@@ -1,231 +1,805 @@
-<!DOCTYPE html>
-<html lang="en" style="color-scheme: light dark;" xmlns:v="urn:schemas-microsoft-com:vml">
-<head>
-    <meta charset="utf-8">
-    <meta name="x-apple-disable-message-reformatting">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="telephone=no, date=no, address=no, email=no, url=no" name="format-detection">
-    <meta content="light dark" name="color-scheme">
-    <meta content="light dark" name="supported-color-schemes">
-    <!--[if mso]>
-    <noscript>
-        <xml>
-            <o:OfficeDocumentSettings xmlns:o="urn:schemas-microsoft-com:office:office">
-                <o:PixelsPerInch>96</o:PixelsPerInch>
-            </o:OfficeDocumentSettings>
-        </xml>
-    </noscript>
-    <style>
-        td, th, div, p, a, h1, h2, h3, h4, h5, h6 {
-            font-family: "Segoe UI", sans-serif;
-            mso-line-height-rule: exactly;
-        }
-    </style>
-    <![endif]-->    <title>The Website Weekly Newsletter</title>
-    <style>:root {
-            color-scheme: light dark;
+<title>Reçu HabitaConnect</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<style type="text/css">
+    img + div {
+        display: none !important; /* Hides image downloading in Gmail */
+    }
+
+    @media screen and (max-width: 600px) {
+        /** Gmail **/
+        *[class="Gmail"] {
+            display: none !important
         }
 
-        .hover-bg-indigo-700:hover {
-            background-color: #4338ca !important;
+        /** Wrapper **/
+        .Wrapper {
+            max-width: 600px !important;
+            min-width: 320px !important;
+            width: 100% !important;
+            border-radius: 0 !important;
         }
 
-        .hover-text-indigo-500:hover {
-            color: #6366f1 !important;
+        .Section {
+            width: 100% !important;
         }
 
-        .hover-text-decoration-underline:hover {
-            text-decoration: underline;
+        .Section--last {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
         }
 
-        @media (max-width: 600px) {
-            .sm-inline-block {
-                display: inline-block !important;
-            }
+        /** Notice **/
+        .Notice {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
 
-            .sm-h-8 {
-                height: 32px !important;
-            }
+        /** Header **/
+        .Header .Header-left,
+        .Header .Header-right {
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+        }
 
-            .sm-w-full {
-                width: 100% !important;
-            }
+        /** Content **/
+        .Content {
+            width: auto !important;
+        }
 
-            .sm-w-6 {
-                width: 24px !important;
-            }
+        /** Divider **/
+        .Divider--kill {
+            display: none !important;
+            height: 0 !important;
+            width: 0 !important;
+        }
 
-            .sm-py-8 {
-                padding-top: 32px !important;
-                padding-bottom: 32px !important;
-            }
+        /** Spacer **/
+        .Spacer--gutter {
+            width: 20px !important;
+        }
 
-            .sm-px-6 {
-                padding-left: 24px !important;
-                padding-right: 24px !important;
-            }
+        .Spacer--kill {
+            height: 0 !important;
+            width: 0 !important;
+        }
 
-            .sm-px-4 {
-                padding-left: 16px !important;
-                padding-right: 16px !important;
-            }
+        .Spacer--emailEnds {
+            height: 0 !important;
+        }
 
-            .sm-px-0 {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-            }
+        /** Target **/
+        .Target img {
+            display: none !important;
+            height: 0 !important;
+            margin: 0 !important;
+            max-height: 0 !important;
+            min-height: 0 !important;
+            mso-hide: all !important;
+            padding: 0 !important;
+            width: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
 
-            .sm-pb-8 {
-                padding-bottom: 32px !important;
-            }
+        .Target::before {
+            content: '' !important;
+            display: block !important;
+        }
 
-            .sm-text-3xl {
-                font-size: 30px !important;
-            }
+        /** Header **/
+        .Header-area {
+            width: 100% !important;
+        }
 
-            .sm-leading-10 {
-                line-height: 40px !important;
-            }
+        .Header-left,
+        .Header-left::before,
+        .Header-right,
+        .Header-right::before {
+            height: 110px !important;
+            width: auto !important;
+            background-size: 252px 110px !important;
+        }
 
-            p {
-                color: #0f172a;
-            }
-        }</style>
+        .Header-left {
+            background-image: url('https://stripe-images.s3.amazonaws.com/notifications/hosted/20180110/Header/Left.png') !important;
+            background-position: bottom right !important;
+        }
+
+        .Header-right {
+            background-image: url('https://stripe-images.s3.amazonaws.com/notifications/hosted/20180110/Header/Right.png') !important;
+            background-position: bottom left !important;
+        }
+
+        .Header-icon,
+        .Header-icon::before {
+            width: 96px !important;
+            height: 90px !important;
+            background-size: 96px 110px !important;
+            background: linear-gradient(-10.5deg, #ffff 43%, #007bff 0);
+        }
+
+        .Header-icon {
+            width: 96px !important;
+            height: 110px !important;
+            background-position: bottom center !important;
+        }
+
+        /** Table **/
+        .Table-content {
+            width: auto !important;
+        }
+
+        .Table-rows {
+            width: 100% !important;
+        }
+    }
+
+    @media screen and (max-width: 599px) {
+        /** Data Blocks **/
+        .DataBlocks-item {
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .DataBlocks-spacer {
+            display: block !important;
+            height: 12px !important;
+            width: auto !important;
+        }
+    }
+</style>
 </head>
-<body style="word-break: break-word; -webkit-font-smoothing: antialiased; margin: 0; width: 100%; background-color: #f8fafc; padding: 0">
-<div style="display: none">
-    Bonjour , votre paiement a été effectué avec succès !
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847; &#847;
-    &#847; &#847; &#847; &#847; &#847; &#847;
-</div>
-<div aria-label="The Website Weekly Newsletter" aria-roledescription="email" lang="fr" role="article">
-    <table cellpadding="0" cellspacing="0" role="presentation"
-           style="width: 100%; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+<body class="Email"
+      style="margin: 0;padding: 0;border: 0;background-color: #f1f5f9;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;min-width: 100% !important;width: 100% !important;">
+<div class="Preheader"
+     style="display: none !important;max-height: 0;max-width: 0;mso-hide: all;overflow: hidden;color: #ffffff;font-size: 1px;line-height: 1px;opacity: 0;visibility: hidden;"></div>
+<div class="Background" style="min-width: 100%;width: 100%;background-color: #f1f5f9;">
+    <table class="Wrapper" align="center"
+           style="border: 0;border-collapse: collapse;margin: 0 auto !important;padding: 0;max-width: 600px;min-width: 600px;width: 600px;">
+        <tbody>
         <tr>
-            <td align="center" class="sm-px-4" style="background-color: #f8fafc">
-                <table cellpadding="0" cellspacing="0" class="sm-w-full" role="presentation" style="width: 600px">
+            <td style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+
+
+                <table class="Divider Divider--small Divider--kill" width="100%"
+                       style="border: 0;border-collapse: collapse;margin: 0;padding: 0;">
+                    <tbody>
                     <tr>
-                        <td style="background-color: white ;border-radius: 4px; background-size: cover; background-position: top; background-repeat: no-repeat; text-align: left">
-                            <!--[if mso]>
-                            <v:rect stroke="false" style="width: 600px" xmlns:v="urn:schemas-microsoft-com:vml">
-                                <v:fill type="frame"
-                                        src="https://images.unsplash.com/photo-1565932887479-b18108f07ffd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80"/>
-                                <v:textbox inset="0,0,0,0" style="mso-fit-shape-to-text: true">
-                                    <div><![endif]-->
-                            <div class="sm-h-8" role="separator" style="line-height: 64px">&zwnj;</div>
-                            <table cellpadding="0" cellspacing="0" role="presentation" style="width: 100%">
-                                <tr>
-                                    <td class="sm-w-6" style="width: 48px"></td>
-                                    <td>
-                                        <h1 class="sm-text-3xl sm-leading-10"
-                                            style="margin: 0; margin-bottom: 16px; font-size: 36px; color: black">
-                                            Bonjour
-                                        </h1>
-                                        <h1 class="sm-text-3xl sm-leading-10"
-                                            style="margin: 0; margin-bottom: 16px; font-size: 36px; color: black">
-                                            Merci pour votre reservation !
-                                        </h1>
-                                        <p style="margin: 0; font-size: 18px; line-height: 24px; color: black">
-                                            Vous trouverez ci-dessous le récapitulatif de votre location.
-                                        </p>
-                                        <br>
-                                        <br>
-                                        <p style="margin: 0; font-size: 18px; line-height: 24px; color: black">
-                                            Vous pouvez aussi consulter les détails de votre location
-                                            en cliquant sur le bouton juste en dessous 👇
-                                        </p>
-                                        <div class="sm-h-8" role="separator" style="line-height: 64px">&zwnj;</div>
-                                        <div style="line-height: 100%">
-                                            <a class="hover-bg-indigo-700" href="https://127.0.0.1:8000/reservation/all"
-                                               style="text-decoration: none; display: inline-block; border-radius: 4px; background-color: #3730a3; padding-top: 16px; padding-bottom: 16px; padding-left: 24px; padding-right: 24px; text-align: center; font-size: 16px; font-weight: 600; color: #fff">
-                                                <!--[if mso]>
-                                                  <i style="mso-text-raise: 30px; letter-spacing: 24px">&#8202;</i>
-                                                <![endif]-->
-                                                <span style="mso-text-raise: 16px">Consulter ma resevartion &rarr;</span>
-                                                <!--[if mso]>
-                                                  <i style="letter-spacing: 24px">&#8202;</i>
-                                                <![endif]-->
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td class="sm-w-6" style="width: 48px"></td>
-                                </tr>
-                            </table>
-                            <div class="sm-h-8" role="separator" style="line-height: 64px">&zwnj;</div>
-                            <!--[if mso]></div></v:textbox></v:rect><![endif]-->
+                        <td class="Spacer Spacer--divider" height="20"
+                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                            &nbsp;
                         </td>
                     </tr>
-                    <tr role="separator">
-                        <td style="height: 32px"></td>
-                    </tr>
-                    <tr>
-                        <td class="sm-px-0"
-                            style="width: 100%; padding-left: 24px; padding-right: 24px; text-align: left">
-                            <table cellpadding="0" cellspacing="0" role="presentation" style="width: 100%">
-                                <tr>
-                                    <td class="sm-w-full sm-inline-block" style="width: 100%; padding-bottom: 32px">
-                                        <table cellpadding="0" cellspacing="0" role="presentation" style="width: 100%">
-                                            <tr>
-                                                <td style="border-radius: 4px; background-color: #fff; padding: 24px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05)">
-                                                    <p style="margin: 0; margin-bottom: 4px; font-size: 14px; color: #64748b">
-                                                       date
-                                                    </p>
-                                                    <h2 style="margin: 0; margin-bottom: 24px; font-size: 24px; line-height: 24px; color: black">
-                                                        Informations sur le véhicule 🛣️
-                                                    </h2>
-                                                    <p style="margin: 0; margin-bottom: 24px; font-size: 16px; color: #334155">
-                                                    <p style="color: black"> Marque : </p>
-                                                    <p style="color: black"> Modele : </p>
-                                                    <p style="color: black"> Caution : €</p>
-                                                    <p style="color: black"> Nombre de kilomètres : km</p>
-                                                    <p style="color: black"> Couleur : </p>
-                                                    <p style="color: black"> Année :  </p>
-                                                    <p style="color: black"> Boîte de vitesse :  </p>
-                                                    <p style="color: black"> Fuel :  </p>
-                                                    <p style="color: black"> Nombre de chevaux :  ch</p>
-
-                                                    <img height="auto" src="" width="100%">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-
-                    <br>
-
-                    <tr role="separator">
-                        <td class="sm-h-8" style="height: 64px"></td>
-                    </tr>
-
-                    <tr role="separator">
-                        <td class="sm-h-8" style="height: 64px"></td>
-                    </tr>
-                    <tr>
-                        <td class="sm-px-6"
-                            style="border-radius: 4px; background-color: #fff; padding-top: 16px; padding-bottom: 16px; padding-left: 48px; padding-right: 48px; text-align: left; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05)">
-                            <p style="margin: 0; font-size: 14px; color: #64748b">
-                                Vous recevez cet email car vous venez d'effectuer une reservation sur notre site HabitaConncet.
-                            </p>
-                        </td>
-                    </tr>
-                    <tr role="separator">
-                        <td class="sm-h-8" style="height: 48px"></td>
-                    </tr>
+                    </tbody>
                 </table>
+
+                <div class="Shadow"
+                     style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;box-shadow: 0 7px 14px 0 rgba(50,50,93,0.10), 0 3px 6px 0 rgba(0,0,0,0.07);">
+
+                    <table class="Section Title" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+
+                            <td class="Content Title-copy Font Font--title" align="center"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #32325d;font-size: 24px;line-height: 32px;">
+                                <br>
+                                Reçu de HabitaConnect
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="8"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="4"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Title" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Content Title-copy Font Font--title" align="center"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 15px;line-height: 18px;">
+                                Reçu #{{ $facture->id }}
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="24"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section DataBlocks" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;width: 100%;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Content"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;">
+                                <table class="DataBlocks DataBlocks--three"
+                                       style="border: 0;border-collapse: collapse;margin: 0;padding: 0;width: 100%;">
+                                    <tbody>
+                                    <tr>
+                                        <td class="DataBlocks-item" valign="top"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+                                            <table style="border: 0;border-collapse: collapse;margin: 0;padding: 0;">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="Font Font--caption Font--uppercase Font--mute Font--noWrap"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 12px;line-height: 16px;white-space: nowrap;font-weight: bold;text-transform: uppercase;">
+                                                        Le montant payé
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Font Font--body Font--noWrap"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;white-space: nowrap;">
+                                                        {{ $facture->amount }} €
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td class="Spacer DataBlocks-spacer" width="20"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                            &nbsp;
+                                        </td>
+                                        <td class="DataBlocks-item" valign="top"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+                                            <table style="border: 0;border-collapse: collapse;margin: 0;padding: 0;">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="Font Font--caption Font--uppercase Font--mute Font--noWrap"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 12px;line-height: 16px;white-space: nowrap;font-weight: bold;text-transform: uppercase;">
+                                                        Date de paiement
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Font Font--body Font--noWrap"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;white-space: nowrap;">
+                                                        {{ $date->format('d/m/Y') }}
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+
+                                        <td class="Spacer DataBlocks-spacer" width="20"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                            &nbsp;
+                                        </td>
+                                        <td class="DataBlocks-item" valign="top"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+                                            <table style="border: 0;border-collapse: collapse;margin: 0;padding: 0;">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="Font Font--caption Font--uppercase Font--mute Font--noWrap"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 12px;line-height: 16px;white-space: nowrap;font-weight: bold;text-transform: uppercase;">
+                                                        Mode de paiement
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Font Font--body Font--noWrap"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;white-space: nowrap;">
+                                    <span>
+                                      <img alt="Mastercard" height="16"
+                                           src="https://stripe-images.s3.amazonaws.com/emails/receipt_assets/card/mastercard-dark@2x.png"
+                                           style="border: 0; margin: 0; padding: 0; vertical-align: text-bottom;"
+                                           width="75">
+                                    </span>
+                                                        <span> – XXXX</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="32"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table class="Section Copy"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Content Font Font--caption Font--uppercase Font--mute Delink"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 12px;line-height: 16px;font-weight: bold;text-transform: uppercase;">
+                                Résumé
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Spacer Spacer--divider" colspan="3" height="12"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Table" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--kill" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Content"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;">
+                                <table class="Table-body"
+                                       style="border: 0;border-collapse: collapse;margin: 0;padding: 0;width: 100%;background-color: #f6f9fc;border-radius: 4px;">
+                                    <tbody>
+                                    <tr>
+                                        <td class="Spacer Spacer--divider" colspan="3" height="4"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="Spacer Spacer--gutter" width="20"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                            &nbsp;
+                                        </td>
+
+                                        <td class="Table-content"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 432px;">
+                                            <table class="Table-rows" width="432"
+                                                   style="border: 0;border-collapse: collapse;margin: 0;padding: 0;">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="Table-description Font Font--caption Font--uppercase Font--mute Delink"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 12px;line-height: 16px;font-weight: bold;text-transform: uppercase;">
+                                                        {{ $date->format('d/m/Y') }}
+                                                    </td>
+                                                    <td class="Spacer Table-gap" width="8"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td class="Spacer Table-gap"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="Table-description Font Font--body"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;">
+                                                        <div style="">
+                                                            {{ $announce->title }}
+                                                            <span class="Content Font Font--mute Delink"
+                                                                  style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;color: #8898aa;font-size: 14px;line-height: 14px;">× {{ $reservation->total_days }} jours </span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="Spacer Table-gap" width="8"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td class="Table-amount Font Font--body" align="right" valign="top"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;">
+                                                        {{ $facture->amount }} €
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="Spacer" bgcolor="e6ebf1" colspan="3" height="1"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="8"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Table-description Font Font--body Font--alt"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;font-weight: bold;">
+                                                        Montant payé
+                                                    </td>
+                                                    <td class="Spacer Table-gap" width="8"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td class="Table-amount Font Font--body Font--alt" align="right"
+                                                        valign="top"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;font-weight: bold;">
+                                                        {{ $facture->amount }} €
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="Table-divider Spacer" colspan="3" height="6"
+                                                        style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+
+                                        <td class="Spacer Spacer--gutter" width="20"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="Spacer Spacer--divider" colspan="3" height="4"
+                                            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td class="Spacer Spacer--kill" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider Divider--large" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="44"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table class="Section Separator" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Spacer" bgcolor="e6ebf1" height="1"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="32"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table class="Section Copy"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Content Footer-help Font Font--body"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #525f7f;font-size: 15px;line-height: 24px;">
+                                Si vous avez des questions, contactez HabiConnect à <a href="mailto:help@delicake.com"
+                                                                                    style="white-space: nowrap;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;outline: 0;text-decoration: none;color: #3297d3;"
+                                                                                    target="_blank">help@habitaconnect.com</a>
+                                ou appelez au <a href="tel:+33623214563"
+                                                 style="white-space: nowrap;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;outline: 0;text-decoration: none;color: #3297d3;"
+                                                 target="_blank">+33 623214563</a>.
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="16"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="16"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Separator" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Spacer" bgcolor="e6ebf1" height="1"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="32"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider Divider--small" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="20"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Copy"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Content Footer-legal Font Font--caption Font--mute"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 12px;line-height: 16px;">
+                                Vous recevez cet e-mail car vous avez effectué un achat sur
+                                <a href="https://delicake.sami-bahij.com/"
+                                   style="-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;outline: 0;text-decoration: none;color: #3297d3;"
+                                   target="_blank">HabitaConnect</a>.
+                                HabitaConnect s'associe à Stripe pour fournir une facturation et un traitement des paiements sécurisés.
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Divider Divider--small" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="20"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Copy"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                            <td class="Content Footer-legal Font Font--caption Font--mute"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 472px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;vertical-align: middle;color: #8898aa;font-size: 12px;line-height: 16px;">
+                                Stripe, <a href="#" class="Delink Delink--mute"
+                                           style="-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;outline: 0;text-decoration: none;color: #8898aa !important;"
+                                           target="_blank">185 Berry Street, Suite 550, San Francisco CA 94107</a>
+                            </td>
+                            <td class="Spacer Spacer--gutter" width="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="Section Section--last Divider Divider--large" width="100%"
+                           style="border: 0;border-collapse: collapse;margin: 0;padding: 0;background-color: #ffffff;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;">
+                        <tbody>
+                        <tr>
+                            <td class="Spacer Spacer--divider" height="64"
+                                style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
             </td>
         </tr>
+        </tbody>
     </table>
 </div>
+
+
+<table class="Divider Divider--small Divider--kill" width="100%"
+       style="border: 0;border-collapse: collapse;margin: 0;padding: 0;">
+    <tbody>
+    <tr>
+        <td class="Spacer Spacer--divider" height="20"
+            style="border: 0;border-collapse: collapse;margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #ffffff;font-size: 1px;line-height: 1px;mso-line-height-rule: exactly;">
+            &nbsp;
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
 </body>
+
+
+</body>
+
 </html>

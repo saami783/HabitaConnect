@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Enum\ReservationStatus;
-use App\Http\Mail\ConfirmationReservation;
+use App\Mail\ConfirmationReservation;
 use App\Models\Announce;
+use App\Models\Facture;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,12 +61,22 @@ class StripeController extends Controller
             return redirect()->route('/');
         }
 
-        $reservation->status = ReservationStatus::PaiementAccepte;
+//        $reservation->status = ReservationStatus::PaiementAccepte;
         $reservation->payment_token = null;
         $reservation->save();
+
+        $facture = new Facture();
+        $facture->amount = $reservation->price;
+        $facture->user_id = $reservation->user_id;
+        $facture->announce_id = $reservation->announce_id;
+        $facture->reservation_id = $reservation->id;
+        $facture->save();
+
         $this->sendMail($reservation);
 
-        return redirect()->route('reservations.show', $reservation->id)->with('success', 'Réservation payé avec succès!');
+        return redirect()
+            ->route('reservations.show', $reservation->id)
+            ->with('success', 'Réservation payé avec succès!');
     }
 
 

@@ -10,6 +10,7 @@ class Announce extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'title',
         'description',
         'address',

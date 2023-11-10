@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Reservation;
 
+use App\Enum\ReservationStatus;
 use App\Http\Controllers\Controller;
+use App\Models\Announce;
 use App\Models\Reservation;
+use DateTime;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 
@@ -38,8 +41,33 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $announce = Announce::find($request->announce_id);
+
+        $validatedData = $request->validate([
+            'begin_at' => 'required|date',
+            'end_at' => 'required|date|after:begin_at',
+            'announce_id' => 'required|exists:announces,id',
+        ]);
+
+        // Calcul de la différence en jours entre begin_at et end_at
+        $daysDifference = (new DateTime($validatedData['begin_at']))->diff(new DateTime($validatedData['end_at']))->days;
+
+        $reservation = new Reservation();
+        $reservation->begin_at = $validatedData['begin_at'];
+        $reservation->end_at = $validatedData['end_at'];
+        $reservation->announce_id = $announce->id;
+        $reservation->user_id = auth()->user()->id;
+        $reservation->total_days = $daysDifference;
+
+        $reservation->status = ReservationStatus::EnCours;
+        $reservation->price = $daysDifference * $announce->price_per_night;
+
+        $reservation->save();
+
+        return redirect()->route('reservations.index')->with('success', 'Réservation créée avec succès!');
     }
+
 
     /**
      * Display the specified resource.

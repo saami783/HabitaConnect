@@ -24,6 +24,7 @@ class ReservationFactory extends Factory
             'user_id' => User::factory(),
             'announce_id' => Announce::factory(),
             'price' => 12.35,
+            'total_days' => 23,
             'status' => $this->faker->randomElement(['En cours', 'Paiement accepté', 'Annulé', 'En attente d\'une réponse du propriétaire'])
         ];
     }

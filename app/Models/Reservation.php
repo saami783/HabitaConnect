@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enum\ReservationStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +16,7 @@ class Reservation extends Model
         'end_at',
         'user_id',
         'announce_id',
-        'status',
+        'status' => ReservationStatus::class,
         'price'
     ];
 

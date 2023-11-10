@@ -14,6 +14,7 @@ class PdfController extends Controller
 
     public function generatePdf(Reservation $reservation)
     {
+        $this->authorize('view', $reservation);
 
         $announce = Announce::find($reservation->announce_id);
         $facture = $reservation->facture;

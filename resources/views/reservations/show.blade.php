@@ -11,6 +11,12 @@
     <p> Status : {{ $reservation->status }} </p>
 
     @if($reservation->status === "Réservation non finalisée")
-        <p style="color: red;"> Bouton de paiement </p>
+        <form action="/session" method="POST">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <input type='hidden' name="total" value="{{ $reservation->price }}">
+            <input type='hidden' name="productname" value="{{ $reservation->announce_id }}">
+            <input type='hidden' name="reservation" value="{{ $reservation->id }}">
+            <button class="btn btn-success" type="submit" id="checkout-live-button">Payer</button>
+        </form>
     @endif
 @endsection

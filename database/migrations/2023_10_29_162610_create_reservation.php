@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('status');
             $table->decimal('price');
             $table->integer('total_days');
+            $table->text('payment_token')->nullable(true);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('announce_id')->references('id')->on('announces')->onDelete('cascade');
             $table->timestamps();

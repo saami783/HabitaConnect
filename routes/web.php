@@ -51,4 +51,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
+Route::get('/success/{token}', 'App\Http\Controllers\StripeController@success')->name('success');
+
 require __DIR__.'/auth.php';

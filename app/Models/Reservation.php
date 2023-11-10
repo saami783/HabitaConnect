@@ -17,7 +17,8 @@ class Reservation extends Model
         'user_id',
         'announce_id',
         'status' => ReservationStatus::class,
-        'price'
+        'price',
+        'total_days'
     ];
 
     public function user()

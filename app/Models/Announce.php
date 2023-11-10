@@ -16,6 +16,7 @@ class Announce extends Model
         'address',
         'price_per_night',
         'type',
+        'is_disponible'
     ];
 
     public function user()

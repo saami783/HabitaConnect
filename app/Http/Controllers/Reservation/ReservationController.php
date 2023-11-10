@@ -60,7 +60,7 @@ class ReservationController extends Controller
         $reservation->user_id = auth()->user()->id;
         $reservation->total_days = $daysDifference;
 
-        $reservation->status = ReservationStatus::EnCours;
+        $reservation->status = ReservationStatus::NonFinalise;
         $reservation->price = $daysDifference * $announce->price_per_night;
 
         $reservation->save();

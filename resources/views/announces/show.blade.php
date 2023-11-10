@@ -29,29 +29,6 @@
 
             </div>
 
-            <div class="container">
-                <h2>Création d'une Réservation</h2>
-
-                <p>Prix par nuit : {{ $announce->price_per_night  }} </p>
-                <form method="POST" action="{{ route('reservations.store') }}">
-                    @csrf
-
-                    <div class="form-group">
-                        <label for="begin_at">Date de début</label>
-                        <input type="date" class="form-control" id="begin_at" name="begin_at" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="end_at">Date de fin</label>
-                        <input type="date" class="form-control" id="end_at" name="end_at" required>
-                    </div>
-
-                    <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}" autocomplete="off">
-
-                    <button type="submit" class="btn btn-primary">Réserver</button>
-                </form>
-            </div>
-
             @auth
                 @if(auth()->user()->id == $announce->user_id)
                     <div class="card-footer text-muted">
@@ -62,6 +39,29 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </div>
+                @else
+                    <div class="container">
+                        <h2>Création d'une Réservation</h2>
+
+                        <p>Prix par nuit : {{ $announce->price_per_night  }} </p>
+                        <form method="POST" action="{{ route('reservations.store') }}">
+                            @csrf
+
+                            <div class="form-group">
+                                <label for="begin_at">Date de début</label>
+                                <input type="date" class="form-control" id="begin_at" name="begin_at" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="end_at">Date de fin</label>
+                                <input type="date" class="form-control" id="end_at" name="end_at" required>
+                            </div>
+
+                            <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}" autocomplete="off">
+
+                            <button type="submit" class="btn btn-primary">Réserver</button>
                         </form>
                     </div>
                 @endif

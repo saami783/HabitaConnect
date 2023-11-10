@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enum\ReservationStatus;
 use App\Mail\ConfirmationReservation;
 use App\Models\Announce;
 use App\Models\Facture;
@@ -61,7 +62,7 @@ class StripeController extends Controller
             return redirect()->route('/');
         }
 
-//        $reservation->status = ReservationStatus::PaiementAccepte;
+        $reservation->status = ReservationStatus::PaiementAccepte;
         $reservation->payment_token = null;
         $reservation->save();
 

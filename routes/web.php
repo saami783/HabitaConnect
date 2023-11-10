@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FileUpload;
+use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Reservation\ReservationController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,11 @@ Route::delete('/annonces/{announce}', [Announce\AnnounceController::class, 'dest
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('reservations', ReservationController::class);
+
+    Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
+    Route::get('/success/{token}', 'App\Http\Controllers\StripeController@success')->name('success');
+
+    Route::get('/facture/{reservation}/pdf', [PdfController::class, 'generatePdf']);
 });
 
 Route::get('/dashboard', function () {
@@ -50,8 +56,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
-Route::get('/success/{token}', 'App\Http\Controllers\StripeController@success')->name('success');
 
 require __DIR__.'/auth.php';

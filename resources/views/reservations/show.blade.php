@@ -11,6 +11,6 @@
     <p> Status : {{ $reservation->status }} </p>
 
     @if($reservation->status === "Réservation non finalisée")
-        <p> Bouton de paiement </p>
+        <p style="color: red;"> Bouton de paiement </p>
     @endif
 @endsection

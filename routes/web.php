@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Reservation\ReservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Announce;
 /*
@@ -35,6 +36,10 @@ Route::patch('/annonces/{announce}', [Announce\AnnounceController::class, 'updat
 
 Route::delete('/annonces/{announce}', [Announce\AnnounceController::class, 'destroy'])
     ->middleware(['auth', 'verified'])->name('announces.destroy');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('reservations', ReservationController::class);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

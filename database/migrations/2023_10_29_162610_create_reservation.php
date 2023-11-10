@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('announce_id');
             $table->string('status');
+            $table->decimal('price');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('announce_id')->references('id')->on('announces')->onDelete('cascade');
             $table->timestamps();

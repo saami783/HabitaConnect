@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Enum\ReservationStatus;
+use App\Http\Mail\ConfirmationReservation;
 use App\Models\Announce;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class StripeController extends Controller
@@ -61,14 +64,16 @@ class StripeController extends Controller
         $reservation->status = ReservationStatus::PaiementAccepte;
         $reservation->payment_token = null;
         $reservation->save();
-        $announce = Announce::find($reservation->announce_id);
-        $this->sendMail($reservation, $announce);
+        $this->sendMail($reservation);
 
         return redirect()->route('reservations.show', $reservation->id)->with('success', 'Réservation payé avec succès!');
     }
 
 
-    private function sendMail(Reservation $reservation, Announce $announce) : void {
-
+    private function sendMail(Reservation $reservation) : void
+    {
+        $user = Auth::user();
+        Mail::to($user->email)->send(new ConfirmationReservation($reservation));
     }
+
 }

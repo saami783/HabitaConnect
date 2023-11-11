@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Announce;
 
 use App\Http\Controllers\Controller;
 use App\Models\Announce;
+use App\Models\Equipment;
 use App\Models\File;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
@@ -38,8 +39,8 @@ class AnnounceController extends Controller
     public function create()
     {
         $this->authorize('create', Announce::class);
-        return view('announces.create');
-
+        $equipments = Equipment::all();
+        return view('announces.create', ['equipments' => $equipments]);
     }
 
     /**
@@ -47,6 +48,7 @@ class AnnounceController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
@@ -54,8 +56,9 @@ class AnnounceController extends Controller
             'price_per_night' => 'required|numeric',
             'type' => 'required|in:house,apartment,room',
             'files' => 'required|array',
-            'files.*' => 'image|mimes:jpg,jpeg,png|max:2048', // chaque fichier doit être une image
-
+            'files.*' => 'image|mimes:jpg,jpeg,png|max:2048',
+            'equipments' => 'required|array',
+            'equipments.*' => 'exists:equipments,id',
         ]);
 
         $user = Auth::id();
@@ -68,6 +71,10 @@ class AnnounceController extends Controller
         $announce->type = $request->type;
         $announce->user_id = auth()->id();
         $announce->save();
+
+        if ($request->has('equipments')) {
+            $announce->equipments()->sync($request->equipments);
+        }
 
         $fileModel = new File;
 

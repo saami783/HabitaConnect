@@ -19,6 +19,7 @@ return new class extends Migration
             $table->decimal('price_per_night', 8, 2);
             $table->string('type');
             $table->boolean('is_disponible')->default(true);
+            $table->integer('max_persons')->default(true);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

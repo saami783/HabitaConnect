@@ -29,7 +29,12 @@ class AnnounceController extends Controller
     public function show(Announce $announce)
     {
         $announce->load('files');
-        return view('announces.show', ['announce' => $announce]);
+
+        return view('announces.show', [
+            'announce' => $announce,
+            'equipments' => $announce->equipments
+        ]);
+
     }
 
     /**

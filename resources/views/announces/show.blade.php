@@ -27,6 +27,9 @@
                     @endforeach
                 @endif
 
+                @foreach($equipments as $equipment)
+                    <p> {{ $equipment->name }}</p>
+                @endforeach
             </div>
 
             @auth

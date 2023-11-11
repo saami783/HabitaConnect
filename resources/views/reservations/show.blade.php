@@ -18,6 +18,15 @@
             <input type='hidden' name="reservation" value="{{ $reservation->id }}">
             <button class="btn btn-success" type="submit" id="checkout-live-button">Payer</button>
         </form>
+
+        <div class="card-footer text-muted">
+            {{-- Formulaire de suppression --}}
+            <form action="{{ route('reservations.destroy', $reservation) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette reservation ?');">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Supprimer</button>
+            </form>
+        </div>
     @else
         <p> <a href="{{ route('generatePdf', $reservation) }}"> Ma facture </a> </p>
     @endif

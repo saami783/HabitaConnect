@@ -86,26 +86,13 @@ class ReservationController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Reservation $reservation)
-    {
-        $this->authorize('update', $reservation);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Reservation $reservation)
-    {
-        $this->authorize('update', $reservation);
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Reservation $reservation)
     {
         $this->authorize('delete', $reservation);
+        $reservation->deleteOrFail();
+
+        return redirect()->route('reservations.index')->with('success', 'Announce deleted successfully.');
     }
 }

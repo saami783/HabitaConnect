@@ -4,6 +4,7 @@
     @foreach ($announces as $announce)
         <div>
             <p><a href="{{ route('announces.show', $announce) }}">{{ $announce->title }}</a></p>
+            <p>{{$announce->price }}</p>
             @if($announce->files->isEmpty())
                 <p> Aucune images trouvées pour cette annonce. </p>
             @else

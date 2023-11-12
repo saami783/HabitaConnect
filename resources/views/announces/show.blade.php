@@ -6,7 +6,7 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h2 class="m-0">Hello</h2>
+                <h1 style="color: lightcoral"> <strong>Section informations de l'annonce</strong></h1>
             </div>
             <div class="card-body">
                 <h5 class="card-title">Titre : {{ $announce->title }}</h5>
@@ -19,7 +19,7 @@
                 @if($announce->files->isEmpty())
                     <br>
                     <div class="alert alert-danger">
-                        <p> Aucune images trouvées pour cette annonce. </p>
+                        <p class="alert alert-danger"> Aucune images trouvées pour cette annonce. </p>
                     </div>
                 @else
                     @foreach($announce->files as $file)
@@ -27,6 +27,8 @@
                     @endforeach
                 @endif
 
+                <br>
+                <h1 style="color: lightcoral"> <strong>Section équipements</strong></h1>
                 @foreach($equipments as $equipment)
                     <p> {{ $equipment->name }}</p>
                 @endforeach
@@ -45,8 +47,9 @@
                         </form>
                     </div>
                 @else
+                    <br>
                     <div class="container">
-                        <h2>Création d'une Réservation</h2>
+                        <h1 style="color: lightcoral"> <strong>Section Réservation</strong></h1>
 
                         <p>Prix par nuit : {{ $announce->price_per_night  }} </p>
                         <form method="POST" action="{{ route('reservations.store') }}">

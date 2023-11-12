@@ -34,7 +34,6 @@ class AnnounceController extends Controller
             'announce' => $announce,
             'equipments' => $announce->equipments
         ]);
-
     }
 
     /**

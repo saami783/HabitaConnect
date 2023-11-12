@@ -48,7 +48,7 @@
         </div>
 
         <div class="container mt-5">
-                <h3 class="text-center mb-5">Images</h3>
+            <h1 style="color: lightcoral"> <strong>Section images de l'annonce</strong></h1>
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success">
                         <strong>{{ $message }}</strong>

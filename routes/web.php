@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\FileUpload;
+use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Reservation\ReservationController;
@@ -57,4 +57,23 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/admin', [Admin\DashboardController::class, 'index'])->name('admin');
+
+    Route::get('/admin/users', [Admin\UserCrudController::class, 'index'])->name('admin.users');
+    Route::get('/admin/users/create', [Admin\UserCrudController::class, 'create'])->name('admin.users.create');
+    Route::post('/admin/users/', [Admin\UserCrudController::class, 'store'])->name('admin.users.store');
+    Route::get('/admin/users/{user}', [Admin\UserCrudController::class, 'show'])->name('admin.users.show');
+    Route::get('/admin/users/{user}/edit', [Admin\UserCrudController::class, 'edit'])->name('admin.users.edit');
+    Route::patch('/admin/users/{user}', [Admin\UserCrudController::class, 'update'])->name('admin.users.update');
+    Route::delete('/admin/users/{user}', [Admin\UserCrudController::class, 'destroy'])->name('admin.users.destroy');
+
+    Route::get('/admin/announces', [Admin\AnnounceCrudController::class, 'index'])->name('admin.announces');
+    Route::get('/admin/equipments', [Admin\EquipmentCrudController::class, 'index'])->name('admin.equipments');
+    Route::get('/admin/reservations', [Admin\ResrvationCrudController::class, 'index'])->name('admin.reservations');
+    Route::get('/admin/factures', [Admin\FactureCrudController::class, 'index'])->name('admin.factures');
+    Route::get('/admin/messages', [Admin\MessageCrudController::class, 'index'])->name('admin.messages');
+    Route::get('/admin/reviews', [Admin\ReviewCrudController::class, 'index'])->name('admin.reviews');
+});
 require __DIR__.'/auth.php';

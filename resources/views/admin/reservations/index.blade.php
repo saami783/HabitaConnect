@@ -3,7 +3,7 @@
     <link href="{{ asset("/css/admin/index.css") }}" rel="stylesheet" />
 
 @section('title')
-    {{ __('Utilisateurs') }}
+    {{ __('Réservations') }}
 @endsection
 
 @section('content')
@@ -11,18 +11,22 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Email</th>
-            <th scope="col">Numéro de téléphone</th>
+            <th scope="col">Utilisateur</th>
+            <th scope="col">Annonce</th>
+            <th scope="col">Status</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Nombre de jours</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
+        @foreach($reservations as $reservation)
             <tr>
-                <th scope="row">{{ $user->id }}</th>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->number_phone}}</td>
+                <th scope="row">{{ $reservation->id }}</th>
+                <td><a href="{{ route("admin.users.show", $reservation->user) }}" style="color: #3d95d1"> {{ $reservation->user->email }} </a></td>
+                <td><a href="{{ route("admin.announces.show", $reservation->announce) }}" style="color: #3d95d1"> {{ $reservation->announce->title }} </a></td>
+                <td>{{ $reservation->status }}</td>
+                <td>{{ $reservation->price }} €</td>
+                <td>{{ $reservation->total_days }}</td>
                 <td class="actions actions-as-dropdown">
                     <div class="dropdown dropdown-actions">
                         <a class="dropdown-toggle-no-caret" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -32,15 +36,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" style="">
-                            <a class="dropdown-item action-detail"  href="{{ route('admin.users.show', $user) }}" data-action-name="detail"><span class="action-label">Show</span></a>
+                            <a class="dropdown-item action-detail"  href="{{ route('admin.reservations.show', $reservation) }}" data-action-name="detail"><span class="action-label">Consulter</span></a>
 
-                            <form id="delete-form-{{ $user->id }}" action="{{ route('admin.users.destroy', $user) }}" method="POST" style="display: none;">
-                                @csrf
-                                @method('DELETE')
-                            </form>
-                            <a class="dropdown-item action-delete" href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $user->id }}').submit();"><span class="action-label">Supprimer</span></a>
-
-                            <a class="dropdown-item action-edit" href="{{ route('admin.users.edit', $user) }}" data-action-name="edit"><span class="action-label">Modifier</span></a>
                         </div>
                     </div>
                 </td>
@@ -49,5 +46,5 @@
         </tbody>
     </table>
 
-    {{ $users->links() }}
+    {{ $reservations->links() }}
 @endsection

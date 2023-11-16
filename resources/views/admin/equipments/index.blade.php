@@ -28,7 +28,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" style="">
-                            <a class="dropdown-item action-detail"  href="{{ route('admin.equipments.show', $equipment) }}" data-action-name="detail"><span class="action-label">Show</span></a>
+                            <a class="dropdown-item action-detail"  href="{{ route('admin.equipments.show', $equipment) }}" data-action-name="detail"><span class="action-label">Consulter</span></a>
 
                             <form id="delete-form-{{ $equipment->id }}" action="{{ route('admin.equipments.destroy', $equipment) }}" method="POST" style="display: none;">
                                 @csrf

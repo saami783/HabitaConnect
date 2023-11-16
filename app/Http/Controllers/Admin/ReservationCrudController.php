@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class ReservationCrudController extends Controller
@@ -12,7 +13,8 @@ class ReservationCrudController extends Controller
      */
     public function index()
     {
-        return view('admin.reservations.index');
+        $reservations = Reservation::paginate(10);
+        return view('admin.reservations.index', compact('reservations'));
     }
 
     /**
@@ -34,23 +36,23 @@ class ReservationCrudController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Reservation $reservation)
     {
-        //
+        return view('admin.reservations.show', compact('reservation'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Reservation $reservation)
     {
-        //
+        return view('admin.reservations.edit', compact('reservation'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Reservation $reservation)
     {
         //
     }
@@ -58,8 +60,10 @@ class ReservationCrudController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->deleteOrFail();
+
+        return redirect()->route('admin.reservations')->with('success', 'Reservation deleted successfully.');
     }
 }

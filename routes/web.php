@@ -86,12 +86,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::delete('/admin/equipments/{equipment}', [Admin\EquipmentCrudController::class, 'destroy'])->name('admin.equipments.destroy');
 
     Route::get('/admin/reservations', [Admin\ReservationCrudController::class, 'index'])->name('admin.reservations');
-    Route::get('/admin/reservations/create', [Admin\ReservationCrudController::class, 'create'])->name('admin.reservations.create');
-    Route::post('/admin/reservations/', [Admin\ReservationCrudController::class, 'store'])->name('admin.reservations.store');
     Route::get('/admin/reservations/{reservation}', [Admin\ReservationCrudController::class, 'show'])->name('admin.reservations.show');
-    Route::get('/admin/reservations/{reservation}/edit', [Admin\ReservationCrudController::class, 'edit'])->name('admin.reservations.edit');
-    Route::patch('/admin/reservations/{reservation}', [Admin\ReservationCrudController::class, 'update'])->name('admin.reservations.update');
-    Route::delete('/admin/reservations/{reservation}', [Admin\ReservationCrudController::class, 'destroy'])->name('admin.reservations.destroy');
 
     Route::get('/admin/factures', [Admin\FactureCrudController::class, 'index'])->name('admin.factures');
     Route::get('/admin/factures/create', [Admin\FactureCrudController::class, 'create'])->name('admin.factures.create');

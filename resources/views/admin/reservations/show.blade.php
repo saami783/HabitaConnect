@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ __('Utilisateurs') }}
+    {{ __('Réservations') }}
 @endsection
 
 @section('content')
@@ -33,17 +33,10 @@
             <section class="content-header">
                 <div class="content-header-flex">
                     <h1 class="title">
-                        <strong> {{ $user->email }} </strong>
+                        <strong> {{ $reservation->id }} </strong>
                     </h1>
                     <div class="page-actions">
-                        <a class="action-index btn btn-secondary" href="{{ route('admin.users') }}" data-action-name="index"><span class="action-label">Retour à la liste</span></a>
-                        <a class="action-edit btn btn-primary" href="{{ route('admin.users.edit', $user) }}" data-action-name="edit"><span class="action-label">Modifier</span></a>
-                        <form id="delete-form-{{ $user->id }}" action="{{ route('admin.users.destroy', $user) }}" method="POST" style="display: none;">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                        <a class="dropdown-item action-delete" href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $user->id }}').submit();"><span class="action-label btn btn-outline-danger">Supprimer</span></a>
-
+                        <a class="action-index btn btn-secondary" href="{{ route('admin.reservations') }}" data-action-name="index"><span class="action-label">Retour à la liste</span></a>
                     </div>
                 </div>
             </section>
@@ -52,31 +45,52 @@
             <div class="user-details">
                 <div class="detail">
                     <span class="label">ID :</span>
-                    <span class="value"> {{ $user->id }}</span>
+                    <span class="value"> {{ $reservation->id }}</span>
                 </div>
                 <hr>
                 <div class="detail">
-                    <span class="label">Nom :</span>
-                    <span class="value"> {{ $user->name }}</span>
+                    <span class="label">Date de début de la réservation :</span>
+                    <span class="value"> {{ date('d-M-Y', strtotime($reservation->being_at)) }}</span>
                 </div>
                 <hr>
                 <div class="detail">
-                    <span class="label">Email :</span>
-                    <span class="value">{{ $user->email }}</span>
+                    <span class="label">Date de fin de la réservation :</span>
+                    <span class="value"> {{ date('d-M-Y', strtotime($reservation->end_at)) }}</span>
                 </div>
                 <hr>
                 <div class="detail">
-                    <span class="label">Téléphone :</span>
-                    <span class="value">{{ $user->number_phone }}</span>
+                    <span class="label">Nombre de jours total :</span>
+                    <span class="value">{{ $reservation->total_days }}</span>
                 </div>
                 <hr>
                 <div class="detail">
-                    <span class="label">Rôles :</span>
-                    <ul class="value">
-                        @foreach($user->role as $role)
-                            <li>- {{ $role }}</li>
-                        @endforeach
-                    </ul>
+                    <span class="label">Utilisateur :</span>
+                    <span class="value"><a href="{{ route("admin.users.show", $reservation->user) }}" style="color: #3d95d1"> {{ $reservation->user->email }} </a></span>
+                </div>
+                <hr>
+                <div class="detail">
+                    <span class="label">Annonce :</span>
+                    <span class="value"> <a href="{{ route("admin.announces.show", $reservation->announce) }}" style="color: #3d95d1"> {{ $reservation->announce->title }} </a> </span>
+                </div>
+                <hr>
+                <div class="detail">
+                    <span class="label">Statut :</span>
+                    <span class="value">{{ $reservation->status }}</span>
+                </div>
+                <hr>
+                <div class="detail">
+                    <span class="label">Prix :</span>
+                    <span class="value">{{ $reservation->price }} € </span>
+                </div>
+                <hr>
+                <div class="detail">
+                    <span class="label">Crée le :</span>
+                    <span class="value">{{ date('d-M-Y', strtotime($reservation->created_at)) }}</span>
+                </div>
+                <hr>
+                <div class="detail">
+                    <span class="label">Modifié le :</span>
+                    <span class="value">{{ date('d-M-Y', strtotime($reservation->updated_at)) }}</span>
                 </div>
                 <hr>
             </div>

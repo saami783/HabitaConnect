@@ -72,7 +72,7 @@
                 <hr>
                 <div class="detail">
                     <span class="label">Prix  :</span>
-                    <span class="value">{{ $announce->price_per_night }}</span>
+                    <span class="value">{{ $announce->price_per_night }} € </span>
                 </div>
                 <hr>
                 <div class="detail">

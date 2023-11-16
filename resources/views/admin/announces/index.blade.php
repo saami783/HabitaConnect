@@ -23,7 +23,7 @@
                 <th scope="row">{{ $announce->id }}</th>
                 <td>{{ $announce->title }}</td>
                 <td>{{ $announce->type }}</td>
-                <td>{{ $announce->price_per_night}}</td>
+                <td>{{ $announce->price_per_night}} €</td>
                 <td> <a href="{{ route("admin.users.show", $announce->user_id) }}" style="color: #3d95d1"> {{ $announce->user->email }} </a></td>
                 <td class="actions actions-as-dropdown">
                     <div class="dropdown dropdown-actions">

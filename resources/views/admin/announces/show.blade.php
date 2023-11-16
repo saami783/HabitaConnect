@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{ __('Utilisateurs') }}
+    {{ __('Annonces') }}
 @endsection
 
 @section('content')

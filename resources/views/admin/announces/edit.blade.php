@@ -3,7 +3,7 @@
 <link href="{{ asset("/css/admin/index.css") }}" rel="stylesheet" />
 
 @section('title')
-    {{ __('Utilisateurs') }}
+    {{ __('Annonces') }}
 @endsection
 
 @section('content')

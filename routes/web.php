@@ -72,50 +72,50 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/announces', [Admin\AnnounceCrudController::class, 'index'])->name('admin.announces');
     Route::get('/admin/announces/create', [Admin\AnnounceCrudController::class, 'create'])->name('admin.announces.create');
     Route::post('/admin/announces/', [Admin\AnnounceCrudController::class, 'store'])->name('admin.announces.store');
-    Route::get('/admin/announces/{announces}', [Admin\AnnounceCrudController::class, 'show'])->name('admin.announces.show');
-    Route::get('/admin/announces/{announces}/edit', [Admin\AnnounceCrudController::class, 'edit'])->name('admin.announces.edit');
-    Route::patch('/admin/announces/{announces}', [Admin\AnnounceCrudController::class, 'update'])->name('admin.announces.update');
-    Route::delete('/admin/announces/{announces}', [Admin\AnnounceCrudController::class, 'destroy'])->name('admin.announces.destroy');
+    Route::get('/admin/announces/{announce}', [Admin\AnnounceCrudController::class, 'show'])->name('admin.announces.show');
+    Route::get('/admin/announces/{announce}/edit', [Admin\AnnounceCrudController::class, 'edit'])->name('admin.announces.edit');
+    Route::patch('/admin/announces/{announce}', [Admin\AnnounceCrudController::class, 'update'])->name('admin.announces.update');
+    Route::delete('/admin/announces/{announce}', [Admin\AnnounceCrudController::class, 'destroy'])->name('admin.announces.destroy');
 
     Route::get('/admin/equipments', [Admin\EquipmentCrudController::class, 'index'])->name('admin.equipments');
     Route::get('/admin/equipments/create', [Admin\EquipmentCrudController::class, 'create'])->name('admin.equipments.create');
     Route::post('/admin/equipments/', [Admin\EquipmentCrudController::class, 'store'])->name('admin.equipments.store');
-    Route::get('/admin/equipments/{equipments}', [Admin\EquipmentCrudController::class, 'show'])->name('admin.equipments.show');
-    Route::get('/admin/equipments/{equipments}/edit', [Admin\EquipmentCrudController::class, 'edit'])->name('admin.equipments.edit');
-    Route::patch('/admin/equipments/{equipments}', [Admin\EquipmentCrudController::class, 'update'])->name('admin.equipments.update');
-    Route::delete('/admin/equipments/{equipments}', [Admin\EquipmentCrudController::class, 'destroy'])->name('admin.equipments.destroy');
+    Route::get('/admin/equipments/{equipment}', [Admin\EquipmentCrudController::class, 'show'])->name('admin.equipments.show');
+    Route::get('/admin/equipments/{equipment}/edit', [Admin\EquipmentCrudController::class, 'edit'])->name('admin.equipments.edit');
+    Route::patch('/admin/equipments/{equipment}', [Admin\EquipmentCrudController::class, 'update'])->name('admin.equipments.update');
+    Route::delete('/admin/equipments/{equipment}', [Admin\EquipmentCrudController::class, 'destroy'])->name('admin.equipments.destroy');
 
     Route::get('/admin/reservations', [Admin\ReservationCrudController::class, 'index'])->name('admin.reservations');
     Route::get('/admin/reservations/create', [Admin\ReservationCrudController::class, 'create'])->name('admin.reservations.create');
     Route::post('/admin/reservations/', [Admin\ReservationCrudController::class, 'store'])->name('admin.reservations.store');
-    Route::get('/admin/reservations/{reservations}', [Admin\ReservationCrudController::class, 'show'])->name('admin.reservations.show');
-    Route::get('/admin/reservations/{reservations}/edit', [Admin\ReservationCrudController::class, 'edit'])->name('admin.reservations.edit');
-    Route::patch('/admin/reservations/{reservations}', [Admin\ReservationCrudController::class, 'update'])->name('admin.reservations.update');
-    Route::delete('/admin/reservations/{reservations}', [Admin\ReservationCrudController::class, 'destroy'])->name('admin.reservations.destroy');
+    Route::get('/admin/reservations/{reservation}', [Admin\ReservationCrudController::class, 'show'])->name('admin.reservations.show');
+    Route::get('/admin/reservations/{reservation}/edit', [Admin\ReservationCrudController::class, 'edit'])->name('admin.reservations.edit');
+    Route::patch('/admin/reservations/{reservation}', [Admin\ReservationCrudController::class, 'update'])->name('admin.reservations.update');
+    Route::delete('/admin/reservations/{reservation}', [Admin\ReservationCrudController::class, 'destroy'])->name('admin.reservations.destroy');
 
     Route::get('/admin/factures', [Admin\FactureCrudController::class, 'index'])->name('admin.factures');
     Route::get('/admin/factures/create', [Admin\FactureCrudController::class, 'create'])->name('admin.factures.create');
     Route::post('/admin/factures/', [Admin\FactureCrudController::class, 'store'])->name('admin.factures.store');
-    Route::get('/admin/factures/{factures}', [Admin\FactureCrudController::class, 'show'])->name('admin.factures.show');
-    Route::get('/admin/factures/{factures}/edit', [Admin\FactureCrudController::class, 'edit'])->name('admin.factures.edit');
-    Route::patch('/admin/factures/{factures}', [Admin\FactureCrudController::class, 'update'])->name('admin.factures.update');
-    Route::delete('/admin/factures/{factures}', [Admin\FactureCrudController::class, 'destroy'])->name('admin.factures.destroy');
+    Route::get('/admin/factures/{facture}', [Admin\FactureCrudController::class, 'show'])->name('admin.factures.show');
+    Route::get('/admin/factures/{facture}/edit', [Admin\FactureCrudController::class, 'edit'])->name('admin.factures.edit');
+    Route::patch('/admin/factures/{facture}', [Admin\FactureCrudController::class, 'update'])->name('admin.factures.update');
+    Route::delete('/admin/factures/{facture}', [Admin\FactureCrudController::class, 'destroy'])->name('admin.factures.destroy');
 
     Route::get('/admin/messages', [Admin\MessageCrudController::class, 'index'])->name('admin.messages');
     Route::get('/admin/messages/create', [Admin\MessageCrudController::class, 'create'])->name('admin.messages.create');
     Route::post('/admin/messages/', [Admin\MessageCrudController::class, 'store'])->name('admin.messages.store');
-    Route::get('/admin/messages/{messages}', [Admin\MessageCrudController::class, 'show'])->name('admin.messages.show');
-    Route::get('/admin/messages/{messages}/edit', [Admin\MessageCrudController::class, 'edit'])->name('admin.messages.edit');
-    Route::patch('/admin/messages/{messages}', [Admin\MessageCrudController::class, 'update'])->name('admin.messages.update');
-    Route::delete('/admin/messages/{messages}', [Admin\MessageCrudController::class, 'destroy'])->name('admin.messages.destroy');
+    Route::get('/admin/messages/{message}', [Admin\MessageCrudController::class, 'show'])->name('admin.messages.show');
+    Route::get('/admin/messages/{message}/edit', [Admin\MessageCrudController::class, 'edit'])->name('admin.messages.edit');
+    Route::patch('/admin/messages/{message}', [Admin\MessageCrudController::class, 'update'])->name('admin.messages.update');
+    Route::delete('/admin/messages/{message}', [Admin\MessageCrudController::class, 'destroy'])->name('admin.messages.destroy');
 
     Route::get('/admin/reviews', [Admin\ReviewCrudController::class, 'index'])->name('admin.reviews');
     Route::get('/admin/reviews/create', [Admin\ReviewCrudController::class, 'create'])->name('admin.reviews.create');
     Route::post('/admin/reviews/', [Admin\ReviewCrudController::class, 'store'])->name('admin.reviews.store');
-    Route::get('/admin/reviews/{reviews}', [Admin\ReviewCrudController::class, 'show'])->name('admin.reviews.show');
-    Route::get('/admin/reviews/{reviews}/edit', [Admin\ReviewCrudController::class, 'edit'])->name('admin.reviews.edit');
-    Route::patch('/admin/reviews/{reviews}', [Admin\ReviewCrudController::class, 'update'])->name('admin.reviews.update');
-    Route::delete('/admin/reviews/{reviews}', [Admin\ReviewCrudController::class, 'destroy'])->name('admin.reviews.destroy');
+    Route::get('/admin/reviews/{review}', [Admin\ReviewCrudController::class, 'show'])->name('admin.reviews.show');
+    Route::get('/admin/reviews/{review}/edit', [Admin\ReviewCrudController::class, 'edit'])->name('admin.reviews.edit');
+    Route::patch('/admin/reviews/{review}', [Admin\ReviewCrudController::class, 'update'])->name('admin.reviews.update');
+    Route::delete('/admin/reviews/{review}', [Admin\ReviewCrudController::class, 'destroy'])->name('admin.reviews.destroy');
 
 });
 require __DIR__.'/auth.php';

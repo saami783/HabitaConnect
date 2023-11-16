@@ -1,8 +1,10 @@
 @extends('welcome')
 
+
 @section('content')
+    <link href="{{asset('css/style.css')}}">
     @foreach ($announces as $announce)
-        <div>
+        <div class="hi">
             <p><a href="{{ route('announces.show', $announce) }}">{{ $announce->title }}</a></p>
             <p>{{$announce->price }}</p>
             @if($announce->files->isEmpty())

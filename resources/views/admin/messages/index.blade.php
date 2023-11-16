@@ -3,7 +3,7 @@
     <link href="{{ asset("/css/admin/index.css") }}" rel="stylesheet" />
 
 @section('title')
-    {{ __('Utilisateurs') }}
+    {{ __('Messages') }}
 @endsection
 
 @section('content')
@@ -11,18 +11,16 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Nom</th>
-            <th scope="col">Email</th>
-            <th scope="col">Numéro de téléphone</th>
+            <th scope="col">Auteur</th>
+            <th scope="col">Destinataire</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
+        @foreach($messages as $message)
             <tr>
-                <th scope="row">{{ $user->id }}</th>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->number_phone}}</td>
+                <th scope="row">{{ $message->id }}</th>
+                <td>  <a href="{{ route("admin.users.show", $message->author) }}" style="color: #3d95d1"> {{ $message->expediteur->email }} </a> </td>
+                <td>  <a href="{{ route("admin.users.show", $message->destinataire_id) }}" style="color: #3d95d1"> {{ $message->destinataire->email }} </a> </td>
                 <td class="actions actions-as-dropdown">
                     <div class="dropdown dropdown-actions">
                         <a class="dropdown-toggle-no-caret" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -32,15 +30,13 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" style="">
-                            <a class="dropdown-item action-detail"  href="{{ route('admin.users.show', $user) }}" data-action-name="detail"><span class="action-label">Show</span></a>
+                            <a class="dropdown-item action-detail"  href="{{ route('admin.messages.show', $message) }}" data-action-name="detail"><span class="action-label">Consulter</span></a>
 
-                            <form id="delete-form-{{ $user->id }}" action="{{ route('admin.users.destroy', $user) }}" method="POST" style="display: none;">
+                            <form id="delete-form-{{ $message->id }}" action="{{ route('admin.messages.destroy', $message) }}" method="POST" style="display: none;">
                                 @csrf
                                 @method('DELETE')
                             </form>
-                            <a class="dropdown-item action-delete" href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $user->id }}').submit();"><span class="action-label">Supprimer</span></a>
-
-                            <a class="dropdown-item action-edit" href="{{ route('admin.users.edit', $user) }}" data-action-name="edit"><span class="action-label">Modifier</span></a>
+                            <a class="dropdown-item action-delete" href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $message->id }}').submit();"><span class="action-label">Supprimer</span></a>
                         </div>
                     </div>
                 </td>
@@ -49,5 +45,5 @@
         </tbody>
     </table>
 
-    {{ $users->links() }}
+    {{ $messages->links() }}
 @endsection

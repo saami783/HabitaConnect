@@ -92,19 +92,11 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/factures/{facture}', [Admin\FactureCrudController::class, 'show'])->name('admin.factures.show');
 
     Route::get('/admin/messages', [Admin\MessageCrudController::class, 'index'])->name('admin.messages');
-    Route::get('/admin/messages/create', [Admin\MessageCrudController::class, 'create'])->name('admin.messages.create');
-    Route::post('/admin/messages/', [Admin\MessageCrudController::class, 'store'])->name('admin.messages.store');
     Route::get('/admin/messages/{message}', [Admin\MessageCrudController::class, 'show'])->name('admin.messages.show');
-    Route::get('/admin/messages/{message}/edit', [Admin\MessageCrudController::class, 'edit'])->name('admin.messages.edit');
-    Route::patch('/admin/messages/{message}', [Admin\MessageCrudController::class, 'update'])->name('admin.messages.update');
     Route::delete('/admin/messages/{message}', [Admin\MessageCrudController::class, 'destroy'])->name('admin.messages.destroy');
 
     Route::get('/admin/reviews', [Admin\ReviewCrudController::class, 'index'])->name('admin.reviews');
-    Route::get('/admin/reviews/create', [Admin\ReviewCrudController::class, 'create'])->name('admin.reviews.create');
-    Route::post('/admin/reviews/', [Admin\ReviewCrudController::class, 'store'])->name('admin.reviews.store');
     Route::get('/admin/reviews/{review}', [Admin\ReviewCrudController::class, 'show'])->name('admin.reviews.show');
-    Route::get('/admin/reviews/{review}/edit', [Admin\ReviewCrudController::class, 'edit'])->name('admin.reviews.edit');
-    Route::patch('/admin/reviews/{review}', [Admin\ReviewCrudController::class, 'update'])->name('admin.reviews.update');
     Route::delete('/admin/reviews/{review}', [Admin\ReviewCrudController::class, 'destroy'])->name('admin.reviews.destroy');
 
 });

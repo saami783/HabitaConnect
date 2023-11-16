@@ -32,7 +32,8 @@ class AnnounceController extends Controller
 
         return view('announces.show', [
             'announce' => $announce,
-            'equipments' => $announce->equipments
+            'equipments' => $announce->equipments,
+            'reviews' => $announce->reviews
         ]);
     }
 

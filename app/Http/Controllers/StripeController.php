@@ -19,8 +19,7 @@ class StripeController extends Controller
         return view('reservations.index');
     }
 
-    public function session(Request $request)
-    {
+    public function session(Request $request) {
         \Stripe\Stripe::setApiKey(config('stripe.sk'));
 
         $announce = Announce::find($request->get('productname'));
@@ -28,7 +27,6 @@ class StripeController extends Controller
         $totalprice = $request->get('total');
 
         $token = Str::random(40);
-
         $reservation->payment_token = $token;
         $reservation->save();
 
@@ -49,12 +47,10 @@ class StripeController extends Controller
             'success_url' => route('success', ['token' => $token]),
             'cancel_url'  => route('reservations.show', $request->get('reservation')),
         ]);
-
         return redirect()->away($session->url);
     }
 
-    public function success(string $token)
-    {
+    public function success(string $token) {
 
         $reservation = Reservation::where('payment_token', $token)->firstOrFail();
 
@@ -81,8 +77,7 @@ class StripeController extends Controller
     }
 
 
-    private function sendMail(Reservation $reservation) : void
-    {
+    private function sendMail(Reservation $reservation) : void {
         $user = Auth::user();
         Mail::to($user->email)->send(new ConfirmationReservation($reservation));
     }

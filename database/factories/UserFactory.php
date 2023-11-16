@@ -20,7 +20,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'role' => [$this->faker->randomElement(['ROLE_USER', 'ROLE_BUSINESS'])],
+            'role' => [$this->faker->randomElement(['ROLE_USER', 'ROLE_BUSINESS', 'ROLE_ADMIN'])],
             'email' => $this->faker->unique()->safeEmail,
             'number_phone' => $this->faker->phoneNumber,
             'age' => $this->faker->numberBetween(18, 65),

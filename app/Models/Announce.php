@@ -24,9 +24,9 @@ class Announce extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function commentaires()
+    public function reviews()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Review::class);
     }
 
     public function reservations()

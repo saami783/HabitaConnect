@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Review;
 use App\Http\Controllers\Reservation\ReservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Announce;
@@ -17,26 +18,9 @@ use App\Http\Controllers\Announce;
 |
 */
 
-Route::get('/', [Announce\AnnounceController::class, 'index'])
-    ->name('announces.index');
+Route::get('/', [Announce\AnnounceController::class, 'index'])->name('announces.index');
 
-Route::get('/annonces/create', [Announce\AnnounceController::class, 'create'])
-    ->middleware(['auth', 'verified'])->name('announces.create');
-
-Route::post('/annonces', [Announce\AnnounceController::class, 'store'])
-    ->middleware(['auth', 'verified'])->name('announces.store');
-
-Route::get('/annonces/{announce}', [Announce\AnnounceController::class, 'show'])
-    ->name('announces.show');
-
-Route::get('/annonces/{announce}/edit', [Announce\AnnounceController::class, 'edit'])
-    ->middleware(['auth', 'verified'])->name('announces.edit');
-
-Route::patch('/annonces/{announce}', [Announce\AnnounceController::class, 'update'])
-    ->middleware(['auth', 'verified'])->name('announces.update');
-
-Route::delete('/annonces/{announce}', [Announce\AnnounceController::class, 'destroy'])
-    ->middleware(['auth', 'verified'])->name('announces.destroy');
+Route::get('/annonces/{announce}', [Announce\AnnounceController::class, 'show'])->name('announces.show');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('reservations', ReservationController::class);
@@ -45,6 +29,24 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/success/{token}', 'App\Http\Controllers\StripeController@success')->name('success');
 
     Route::get('/facture/{reservation}/pdf', [PdfController::class, 'generatePdf'])->name('generatePdf');
+
+    Route::get('/annonces/create', [Announce\AnnounceController::class, 'create'])
+        ->middleware(['auth', 'verified'])->name('announces.create');
+
+    Route::post('/annonces', [Announce\AnnounceController::class, 'store'])
+        ->middleware(['auth', 'verified'])->name('announces.store');
+
+    Route::get('/annonces/{announce}/edit', [Announce\AnnounceController::class, 'edit'])
+        ->middleware(['auth', 'verified'])->name('announces.edit');
+
+    Route::patch('/annonces/{announce}', [Announce\AnnounceController::class, 'update'])
+        ->middleware(['auth', 'verified'])->name('announces.update');
+
+    Route::delete('/annonces/{announce}', [Announce\AnnounceController::class, 'destroy'])
+        ->middleware(['auth', 'verified'])->name('announces.destroy');
+
+    Route::post('/review', [Review\ReviewController::class, 'store'])
+        ->middleware(['auth', 'verified'])->name('reviews.store');
 });
 
 Route::middleware('auth')->group(function () {

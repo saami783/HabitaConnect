@@ -74,6 +74,9 @@
                             @endif
                         </form>
                     </div>
+
+                    <h1 style="color: lightcoral"> <strong>Section Avis</strong></h1>
+
                 @endif
             @endauth
 

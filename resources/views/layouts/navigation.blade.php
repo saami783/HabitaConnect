@@ -6,7 +6,10 @@
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @can('view_admin_dashboard')
+                    <x-nav-link :href="route('announces.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('Accueil') }}
+                    </x-nav-link>
+                    @if(in_array("ROLE_ADMIN", auth()->user()->role))
                     <x-nav-link :href="route('admin')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
@@ -34,10 +37,7 @@
                     <x-nav-link :href="route('admin.reviews')" :active="request()->routeIs('dashboard')">
                         {{ __('Avis') }}
                     </x-nav-link>
-                    @endcan
-                        <x-nav-link :href="route('announces.index')" :active="request()->routeIs('dashboard')">
-                            {{ __('Accueil') }}
-                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 

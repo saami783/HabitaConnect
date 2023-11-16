@@ -20,7 +20,7 @@ class ReservationController extends Controller
     {
         $this->authorize('viewAny', Reservation::class);
 
-        $reservations = Reservation::with('annonce')
+        $reservations = Reservation::with('announce')
             ->where('user_id', auth()->user()->id)
             ->get();
 

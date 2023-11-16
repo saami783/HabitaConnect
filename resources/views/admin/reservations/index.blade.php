@@ -26,7 +26,7 @@
                 <td><a href="{{ route("admin.announces.show", $reservation->announce) }}" style="color: #3d95d1"> {{ $reservation->announce->title }} </a></td>
                 <td>{{ $reservation->status }}</td>
                 <td>{{ $reservation->price }} €</td>
-                <td>{{ $reservation->total_days }}</td>
+                <td>{{ $reservation->total_days }} j</td>
                 <td class="actions actions-as-dropdown">
                     <div class="dropdown dropdown-actions">
                         <a class="dropdown-toggle-no-caret" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >

@@ -33,7 +33,7 @@
             <section class="content-header">
                 <div class="content-header-flex">
                     <h1 class="title">
-                        <strong> {{ $reservation->id }} </strong>
+                        <strong> Réservation nº {{ $reservation->id }} </strong>
                     </h1>
                     <div class="page-actions">
                         <a class="action-index btn btn-secondary" href="{{ route('admin.reservations') }}" data-action-name="index"><span class="action-label">Retour à la liste</span></a>
@@ -60,7 +60,7 @@
                 <hr>
                 <div class="detail">
                     <span class="label">Nombre de jours total :</span>
-                    <span class="value">{{ $reservation->total_days }}</span>
+                    <span class="value">{{ $reservation->total_days }} j</span>
                 </div>
                 <hr>
                 <div class="detail">

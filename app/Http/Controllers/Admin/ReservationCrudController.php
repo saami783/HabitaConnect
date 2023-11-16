@@ -18,22 +18,6 @@ class ReservationCrudController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(Reservation $reservation)
@@ -41,29 +25,4 @@ class ReservationCrudController extends Controller
         return view('admin.reservations.show', compact('reservation'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Reservation $reservation)
-    {
-        return view('admin.reservations.edit', compact('reservation'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Reservation $reservation)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Reservation $reservation)
-    {
-        $reservation->deleteOrFail();
-
-        return redirect()->route('admin.reservations')->with('success', 'Reservation deleted successfully.');
-    }
 }

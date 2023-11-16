@@ -33,7 +33,7 @@
             <section class="content-header">
                 <div class="content-header-flex">
                     <h1 class="title">
-                        <strong> {{ $announce->title }} </strong>
+                        <strong> Annonces nº {{ $announce->id }} </strong>
                     </h1>
                     <div class="page-actions">
                         <a class="action-index btn btn-secondary" href="{{ route('admin.announces') }}" data-action-name="index"><span class="action-label">Retour à la liste</span></a>

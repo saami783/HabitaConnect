@@ -89,12 +89,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/reservations/{reservation}', [Admin\ReservationCrudController::class, 'show'])->name('admin.reservations.show');
 
     Route::get('/admin/factures', [Admin\FactureCrudController::class, 'index'])->name('admin.factures');
-    Route::get('/admin/factures/create', [Admin\FactureCrudController::class, 'create'])->name('admin.factures.create');
-    Route::post('/admin/factures/', [Admin\FactureCrudController::class, 'store'])->name('admin.factures.store');
     Route::get('/admin/factures/{facture}', [Admin\FactureCrudController::class, 'show'])->name('admin.factures.show');
-    Route::get('/admin/factures/{facture}/edit', [Admin\FactureCrudController::class, 'edit'])->name('admin.factures.edit');
-    Route::patch('/admin/factures/{facture}', [Admin\FactureCrudController::class, 'update'])->name('admin.factures.update');
-    Route::delete('/admin/factures/{facture}', [Admin\FactureCrudController::class, 'destroy'])->name('admin.factures.destroy');
 
     Route::get('/admin/messages', [Admin\MessageCrudController::class, 'index'])->name('admin.messages');
     Route::get('/admin/messages/create', [Admin\MessageCrudController::class, 'create'])->name('admin.messages.create');

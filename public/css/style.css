@@ -7,13 +7,13 @@
     /*  Header: ensemble des élements  */
 .header {
     width: 100%;
-    height: 110px;
+    height: 90px;
 }
 
 .header-group{
     width: inherit;
     height: inherit;
-    background-color: black;
+    background-color: #111827;
     display: flex;
     justify-content: space-between;
 }
@@ -64,87 +64,57 @@
     transition: box-shadow 0.2s ease;
 }
 
-
-.hi{
-    background-color: red;
+.main_section{
+    width: 90%;
+    margin:0 auto;
+    margin-top: 30px;
+    /*background-color: #02a602;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 
+.annonce{
+    margin: 10px;
+    width: 280px;
+    height: 380px;
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 10px;
+}
 
 
-/*  Les buttons, après être connecté  */
-/*.logo-profile{*/
-/*    height: 40px;*/
-/*    width: 40px;*/
+.offre_image{
+    padding: 2px;
+    border-radius: 10px;
+}
+
+
+.offre_detail{
+    margin-top: 12px;
+    padding: 4px 10px;
+}
+
+
+#pagination{
+    width: 100%; /* Ensure the pagination takes the full width */
+    display: flex;
+    justify-content: center; /* Center the pagination */
+    margin-top: 50px;
+}
+
+
+/*.div_offre{*/
 /*    position: relative;*/
-/*    right: -200px;*/
-/*}*/
-/*.div-liste-roulante{*/
-/*    width: 60px;*/
+/*    max-width: 48rem;*/
+/*    margin:0 auto;*/
 /*}*/
 
-/*ul{*/
-/*    list-style: none;*/
-/*    background-color: inherit;*/
+/*.slider{*/
+/*    display: flex;*/
+/*    aspect-ratio: 4/3;*/
+/*    overflow-x: auto;*/
+/*    scroll-snap-type: x mandatory;*/
+/*    scroll-behavior: smooth;*/
+/*    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);*/
 /*}*/
-
-/*ul li{*/
-/*    display: inline-block;*/
-/*    position: relative;*/
-/*}*/
-/*ul li a{*/
-/*    display: block;*/
-/*    padding: 15px 10px;*/
-/*    color:#FFF;*/
-/*    text-align: center;*/
-/*}*/
-
-/*ul li ul.liste-roulante li{*/
-/*    display: block;*/
-/*}*/
-
-/*ul li ul.liste-roulante {*/
-/*    width: 250px;*/
-/*    background-color: inherit;*/
-/*    position: absolute;*/
-/*    z-index: 999;*/
-/*    display: none;*/
-/*}*/
-
-/*ul li a:hover{*/
-/*    background-color: wheat;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*ul li:hover ul.liste-roulante{*/
-/*    display: block;*/
-/*    background-color: #32325d;*/
-/*}*/
-
-
-/*<div class="div-links">*/
-/*@auth*/
-/*<ul>*/
-/*<li>*/
-/*{{--                                            <div class="div-liste-roulante">--}}*/
-/*<img src="{{asset('images/list.svg')}}" alt="" class="logo-profile">*/
-/*                                                                   {{--                                            </div>--}}*/
-/*<ul class="liste-roulante">*/
-/*<li>*/
-/*<a href="{{ url('/reservations') }}" class="reservation">*/
-/*                                                        Mes réservations*/
-/*</a>*/
-/*</li>*/
-/*<li>*/
-/*<a href="{{ url('/profile') }}" class="profil">*/
-/*                                              Mon profil*/
-/*</a>*/
-/*</li>*/
-/*<li>*/
-/*<a href="{{ route('logout') }}" class="deconnecter" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">*/
-/*                                                                                                                                      Se déconnecter*/
-/*</a>*/
-/*</li>*/
-/*</ul>*/
-/*</li>*/
-/*</ul>*/

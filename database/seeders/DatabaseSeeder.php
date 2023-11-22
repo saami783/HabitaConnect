@@ -9,6 +9,7 @@ use App\Models\Comment;
 use App\Models\Equipment;
 use App\Models\Message;
 use App\Models\Reservation;
+use App\Models\Review;
 use App\Models\User;
 use Database\Factories\EquipmentFactory;
 use Illuminate\Database\Seeder;
@@ -23,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $users = User::factory(10)->create();
         $announces = Announce::factory(10)->create();
         $reservations = Reservation::factory(10)->create();
-        $comments = Comment::factory(10)->create();
+        $review = Review::factory(10)->create();
         $messages = Message::factory(10)->create();
         $equipments = Equipment::factory(10)->create();
 

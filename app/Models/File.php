@@ -14,4 +14,9 @@ class File extends Model
         'file_path',
         'announce_id'
     ];
+
+    public function announce()
+    {
+        return $this->belongsTo(Announce::class);
+    }
 }

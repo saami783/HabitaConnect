@@ -27,6 +27,8 @@ class AnnounceFactory extends Factory
             'type' => $this->faker->randomElement(['appartement', 'maison']),
             'price_per_night' => $this->faker->randomFloat(2, 50, 500),
             'user_id' => User::factory(),
+            'is_disponible' => $this->faker->boolean(['true', 'false']),
+            'max_persons' => $this->faker->randomNumber(1, 5),
         ];
     }
 

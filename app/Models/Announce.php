@@ -10,11 +10,13 @@ class Announce extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'title',
         'description',
         'address',
         'price_per_night',
         'type',
+        'is_disponible'
     ];
 
     public function user()
@@ -22,9 +24,9 @@ class Announce extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function commentaires()
+    public function reviews()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Review::class);
     }
 
     public function reservations()
@@ -37,5 +39,13 @@ class Announce extends Model
         return $this->belongsToMany(Equipment::class, 'announce_equipment');
     }
 
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
 
+    public function factures()
+    {
+        return $this->hasMany(Facture::class, 'announce_id');
+    }
 }

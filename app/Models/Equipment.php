@@ -9,7 +9,10 @@ class Equipment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'id',
+        'name'
+    ];
     protected $table = 'equipments';
 
     public function announces()

@@ -132,5 +132,30 @@
 
         <hr style="margin-top: 40px"/>
 
+        <h1 style="color: lightcoral"> <strong>Section Avis</strong></h1>
+        <form method="POST" action="{{ route('reviews.store') }}" enctype="multipart/form-data">
+            @csrf
+
+            <div class="form-group">
+                <label for="content">Mon avis</label>
+                <input type="text" class="form-control" id="content" name="content" required>
+            </div>
+            <div class="form-group">
+                <label for="note">Note sur 5</label>
+                <input type="number" class="form-control" id="note" name="note" required>
+            </div>
+
+            <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}" autocomplete="off">
+            <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->user_id }}" autocomplete="off">
+
+            <button type="submit">Envoyer mon avis </button>
+        </form>
+
+        @foreach($reviews as $review)
+            <p style="color: lightsalmon"> Utilisateur : {{ $review->user->email }}</p>
+            <p> Commentaire : {{ $review->content }}</p>
+            <p style="color: lightseagreen"> Note : {{ $review->note }}</p>
+        @endforeach
+
     </div>
 @endsection

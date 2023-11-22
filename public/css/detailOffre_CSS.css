@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Apple;
+}
+
+.div-main{
+    width: 80%;
+    margin: 0 auto;
+    /*background-color: #e3e3e3;*/
+}
+
+.div-titre{
+    font-size: 40px;
+}
+
+.div-image{
+    height: 400px;
+    width: 80%;
+    background-color: red;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+    /*  adresse logo */
+.div-adresse, .div-description, .div-utilisateur, .div-type-logement, .div-equipement, .div-prix{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.div-adresse>p, .div-description>p, .div-type-logement>p, .div-utilisateur>p, .div-prix>p{
+    margin-top:5px;
+    margin-left: 80px;
+}
+
+.div-equipement>p{
+    margin-left: 80px;
+    margin-top:2px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.div-all-logo{
+    display: flex;
+    margin-left: 20px;
+}
+
+.div-all-logo p{
+    display: flex;
+    align-items: flex-end;
+    font-weight: bold;
+}
+
+
+.all-logos_upper-main{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.card-text{
+    font-weight: lighter;
+}
+
+                                                            /*  section-upper-main */
+.section-upper-main{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.section-left{
+    width: 50%;
+}
+
+.section-right{
+    position: sticky;
+    /*z-index: 1;*/
+    top: 60px;
+    bottom: 20px;
+    right: 0;
+    width: 35%;
+    height: 380px;
+    margin: 20px 50px 0;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+                                                /*  section-right */
+
+
+.div-à-reserver h3{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 3px;
+}
+
+.div-à-reserver hr{
+    margin-bottom: 40px;
+}
+
+.div-date-debut>label, .div-date-fin>label{
+    margin-bottom: 2px;
+}
+
+.prix-par-nuit, .div-date-debut {
+    margin-bottom: 30px;
+}
+
+.div-btn-reserver{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    border: 1px solid black;
+    width: 500px;
+}
+.btn:hover{
+    border: 1px solid black;
+    background-color: #02a602;
+}
+
+.btn, .btn-reserver{
+    border: 2px solid black;
+}
+
+
+
+
+
+
+
+
+
+

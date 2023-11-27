@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Review;
 use App\Http\Controllers\Controller;
 use App\Models\Announce;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -15,23 +16,18 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Review $review)
-    {
-        //
-    }
+        $announce =  Announce::find($request->announce_id);
+        dd($announce);
+        $this->authorize('store',);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Review $review)
-    {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'address' => 'required|max:255',
+            'price_per_night' => 'required|numeric',
+            'type' => 'required|in:house,apartment,room',
+        ]);
     }
 
     /**

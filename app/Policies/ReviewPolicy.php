@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Models\Announce;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
@@ -27,10 +28,10 @@ class ReviewPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
+    public function store(User $user, Announce $announce): bool
     {
-        // Un utilisateur peut écrire un avis sur une annonce qu'il aura déjà reservé.
-        /** @TODO Faire le traitement */
+        /** @TODO Un utilisateur peut écrire un avis sur une annonce qu'il aura déjà reservé. */
+
         return true;
     }
 

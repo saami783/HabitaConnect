@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Announce;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Reservation\ReservationController;
 use App\Models\Announce;
 use App\Models\Equipment;
 use App\Models\File;
@@ -13,12 +14,18 @@ use Illuminate\Support\Facades\Auth;
 
 class AnnounceController extends Controller
 {
+
+    private ReservationController $controller;
+
+    public function __construct(ReservationController $controller) {
+        $this->controller = $controller;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $announces = Announce::with('files')->paginate(10);
+        $announces = Announce::with('files')->paginate(12);
 
         return view('announces.index', compact('announces'));
     }
@@ -26,14 +33,21 @@ class AnnounceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Announce $announce)
+    public function show(Announce $announce, Request $request)
     {
         $announce->load('files');
+
+        $can_post_review = false;
+
+        if($request->user()) {
+            $can_post_review = $this->controller->findCurrentUserWithReservation($request->user(), $announce);
+        }
 
         return view('announces.show', [
             'announce' => $announce,
             'equipments' => $announce->equipments,
-            'reviews' => $announce->reviews
+            'reviews' => $announce->reviews,
+            'can_post_review' => $can_post_review
         ]);
     }
 

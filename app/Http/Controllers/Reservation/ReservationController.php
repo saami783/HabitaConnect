@@ -6,9 +6,11 @@ use App\Enum\ReservationStatus;
 use App\Http\Controllers\Controller;
 use App\Models\Announce;
 use App\Models\Reservation;
+use App\Models\User;
 use DateTime;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
@@ -25,15 +27,6 @@ class ReservationController extends Controller
             ->get();
 
         return view('reservations.index', compact('reservations'));
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -95,4 +88,24 @@ class ReservationController extends Controller
 
         return redirect()->route('reservations.index')->with('success', 'Announce deleted successfully.');
     }
+
+    public function findCurrentUserWithReservation(User $user, Announce $announce) : bool {
+
+       $reservation = DB::table("reservations")
+            ->join("users", function($join){
+                $join->on("users.id", "=", "reservations.user_id");
+            })
+            ->join("announces", function($join){
+                $join->on("announces.id", "=", "reservations.announce_id");
+            })
+            ->select("reservations.*")
+            ->where("users.id", "=", $user->id)
+            ->where("announces.id", "=", $announce->id)
+            ->get();
+
+
+       if ($reservation->count() > 0) return true;
+       return false;
+    }
+
 }

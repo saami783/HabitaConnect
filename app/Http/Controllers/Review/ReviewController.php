@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Announce;
 use App\Models\Review;
 use App\Models\User;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -13,21 +14,28 @@ class ReviewController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @throws AuthorizationException
      */
     public function store(Request $request)
     {
 
         $announce =  Announce::find($request->announce_id);
-        dd($announce);
-        $this->authorize('store',);
+
+        $this->authorize('create', [Review::class, $announce]);
 
         $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required',
-            'address' => 'required|max:255',
-            'price_per_night' => 'required|numeric',
-            'type' => 'required|in:house,apartment,room',
+            'review_content' => ['required', 'string', 'max:255'],
+            'note' => ['required', 'numeric', 'min:1', 'max:5'],
         ]);
+
+        $review = new Review();
+        $review->content = $request->review_content;
+        $review->note = $request->note;
+        $review->user_id = $request->user()->id;
+        $review->announce_id = $announce->id;
+        $review->saveOrFail();
+
+        return redirect()->route('announces.show', $announce)->with('success', 'Votre avis a bien été posté!');
     }
 
     /**

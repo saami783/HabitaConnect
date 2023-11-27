@@ -111,7 +111,7 @@ class AnnounceController extends Controller
             return back()
                 ->with('success','File has been uploaded.');
         }
-        return redirect()->route('announces.index')->with('success', 'Announce created successfully!');
+        return redirect()->route('announces.index')->with('success', 'Announce crée avec succès!');
     }
 
     /**

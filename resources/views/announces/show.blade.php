@@ -134,12 +134,21 @@
 
         <h1 style="color: lightcoral"> <strong>Section Avis</strong></h1>
         @if($can_post_review)
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form method="POST" action="{{ route('reviews.store') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
-                    <label for="content">Mon avis</label>
-                    <input type="text" class="form-control" id="content" name="content" required>
+                    <label for="review_content">Mon avis</label>
+                    <input type="text" class="form-control" id="review_content" name="review_content" required>
                 </div>
                 <div class="form-group">
                     <label for="note">Note sur 5</label>
@@ -151,6 +160,12 @@
 
                 <button type="submit">Envoyer mon avis </button>
             </form>
+        @endif
+
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <strong>{{ $message }}</strong>
+            </div>
         @endif
 
         @foreach($reviews as $review)

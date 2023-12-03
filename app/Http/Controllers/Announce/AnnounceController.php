@@ -98,13 +98,14 @@ class AnnounceController extends Controller
         $fileModel = new File;
 
         if($request->hasfile('files')) {
+
             foreach ($request->file('files') as $file) {
                 $fileName = time().'_'.$file->getClientOriginalName();
                 $filePath = $file->storeAs('uploads' . '/annonces/' . 'users/' . "user_$user" . "/annonces_$announce->id", $fileName, 'public');
 
                 $fileModel = new File;
                 $fileModel->name = $fileName;
-                $fileModel->file_path = '/storage/' . $filePath;
+                $fileModel->file_path = 'storage/uploads/annonces/users/user_' . $user . '/annonces_' . $announce->id . '/' . $fileName;
                 $fileModel->announce_id = $announce->id;
                 $fileModel->saveOrFail();
             }

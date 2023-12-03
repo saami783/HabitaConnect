@@ -11,16 +11,8 @@
                 @else
                         @foreach($announce->files as $file)
                             <div class="div_offre_image">
-{{--                                <img src="{{asset('images/images/1.svg')}}"  id="offre_image1">--}}
-{{--                                <img src="{{asset('images/images/2.svg')}}" id="offre_image2">--}}
-{{--                                <img src="{{asset('images/images/3.svg')}}"  id="offre_image3">--}}
                                 <img src="{{ asset($file->file_path) }}" alt="Announce Image" style="width:100px; height:auto;" class="offre_image">
-{{--                            </div>--}}
-{{--                                <div class="slider">--}}
-{{--                                    <a href="#offre_image1"></a>--}}
-{{--                                    <a href="#offre_image2"></a>--}}
-{{--                                    <a href="#offre_image3"></a>--}}
-{{--                            </div>--}}
+                            </div>
                         @endforeach
                 @endif
             </div>

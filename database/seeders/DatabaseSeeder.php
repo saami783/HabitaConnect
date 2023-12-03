@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
         $announces = Announce::factory(10)->create();
         $reservations = Reservation::factory(10)->create();
         $review = Review::factory(10)->create();
-        $messages = Message::factory(10)->create();
         $equipments = Equipment::factory(10)->create();
 
         foreach ($announces as $announce) {

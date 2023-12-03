@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin;
 use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Review;
+use App\Http\Controllers\Test;
 use App\Http\Controllers\Reservation\ReservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Announce;
@@ -21,15 +22,15 @@ use App\Http\Controllers\Announce;
 Route::get('/', [Announce\AnnounceController::class, 'index'])->name('announces.index');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('reservations', ReservationController::class);
-
-    Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
-    Route::get('/success/{token}', 'App\Http\Controllers\StripeController@success')->name('success');
-
-    Route::get('/facture/{reservation}/pdf', [PdfController::class, 'generatePdf'])->name('generatePdf');
 
     Route::get('/annonces/create', [Announce\AnnounceController::class, 'create'])
         ->middleware(['auth', 'verified'])->name('announces.create');
+
+});
+
+    Route::get('/annonces/{announce}', [Announce\AnnounceController::class, 'show'])->name('announces.show');
+
+Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('/annonces', [Announce\AnnounceController::class, 'store'])
         ->middleware(['auth', 'verified'])->name('announces.store');
@@ -45,6 +46,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('/review', [Review\ReviewController::class, 'store'])
         ->middleware(['auth', 'verified'])->name('reviews.store');
+
+    Route::resource('reservations', ReservationController::class);
+
+    Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
+    Route::get('/success/{token}', 'App\Http\Controllers\StripeController@success')->name('success');
+
+    Route::get('/facture/{reservation}/pdf', [PdfController::class, 'generatePdf'])->name('generatePdf');
+
 });
 
 Route::get('/annonces/{announce}', [Announce\AnnounceController::class, 'show'])->name('announces.show');

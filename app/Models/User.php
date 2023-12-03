@@ -9,10 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
  use Laravel\Cashier\Billable;
  use Laravel\Sanctum\HasApiTokens;
+ use Lexx\ChatMessenger\Traits\Messagable;
 
-class User extends Authenticatable implements MustVerifyEmail
+ class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, Billable;
+    use HasApiTokens, HasFactory, Notifiable, Billable, Messagable;
 
     /**
      * The attributes that are mass assignable.

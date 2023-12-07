@@ -20,8 +20,6 @@ use App\Http\Controllers\Announce;
 
 Route::get('/', [Announce\AnnounceController::class, 'index'])->name('announces.index');
 
-Route::get('/annonces/{announce}', [Announce\AnnounceController::class, 'show'])->name('announces.show');
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('reservations', ReservationController::class);
 
@@ -48,6 +46,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/review', [Review\ReviewController::class, 'store'])
         ->middleware(['auth', 'verified'])->name('reviews.store');
 });
+
+Route::get('/annonces/{announce}', [Announce\AnnounceController::class, 'show'])->name('announces.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

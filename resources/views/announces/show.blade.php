@@ -132,30 +132,38 @@
 
         <hr style="margin-top: 40px"/>
 
-        <h1 style="color: lightcoral"> <strong>Section Avis</strong></h1>
-        <form method="POST" action="{{ route('reviews.store') }}" enctype="multipart/form-data">
-            @csrf
+        <section id="div_avis">
+            <form method="POST" action="{{ route('reviews.store') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="div_avis_form">
+                    <div class="div_avis_text">
+                        <label for="content">Note sur 5</label>
+                        <input type="number" class="form-control" id="content" name="content" autocomplete="off" max="5" min="1" maxlength="1" required >
+                    </div>
 
-            <div class="form-group">
-                <label for="content">Mon avis</label>
-                <input type="text" class="form-control" id="content" name="content" required>
-            </div>
-            <div class="form-group">
-                <label for="note">Note sur 5</label>
-                <input type="number" class="form-control" id="note" name="note" required>
-            </div>
+                    <div class="div_avis_notes">
+                        <label for="note">Mon avis</label>
+                        <textarea  class="form-control" id="note" name="note" required rows="8"></textarea>
+                    </div>
+                </div>
 
-            <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}" autocomplete="off">
-            <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->user_id }}" autocomplete="off">
+{{--                <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}" autocomplete="off">--}}
+{{--                <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->user_id }}" autocomplete="off">--}}
+                <div class="div_avis_submit">
+                    <p>bla bla bla bla bla bla bla bla bla bla bla  </p>
+                    <button type="submit" class="btn">Envoyer mon avis </button>
+                </div>
+            </form>
+        </section>
 
-            <button type="submit">Envoyer mon avis </button>
-        </form>
+        <hr style="margin-top: 40px"/>
 
-        @foreach($reviews as $review)
-            <p style="color: lightsalmon"> Utilisateur : {{ $review->user->email }}</p>
-            <p> Commentaire : {{ $review->content }}</p>
-            <p style="color: lightseagreen"> Note : {{ $review->note }}</p>
-        @endforeach
-
+        <div>
+            @foreach($reviews as $review)
+                <p style="color: lightsalmon"> Utilisateur : {{ $review->user->email }}</p>
+                <p> Commentaire : {{ $review->content }}</p>
+                <p style="color: lightseagreen"> Note : {{ $review->note }}</p>
+            @endforeach
+        </div>
     </div>
 @endsection

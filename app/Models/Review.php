@@ -17,6 +17,8 @@ class Review extends Model
         'announce_id'
         ];
 
+    protected $table = 'reviews';
+
     public function user()
     {
         return $this->belongsTo(User::class);

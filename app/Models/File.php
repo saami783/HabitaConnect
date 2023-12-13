@@ -15,6 +15,8 @@ class File extends Model
         'announce_id'
     ];
 
+    protected $table = 'files';
+
     public function announce()
     {
         return $this->belongsTo(Announce::class);

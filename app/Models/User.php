@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
  use Laravel\Cashier\Billable;
  use Laravel\Sanctum\HasApiTokens;
  use Lexx\ChatMessenger\Traits\Messagable;
+ use Psy\Util\Json;
 
  class User extends Authenticatable implements MustVerifyEmail
 {

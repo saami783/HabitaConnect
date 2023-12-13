@@ -21,6 +21,8 @@ class Reservation extends Model
         'total_days'
     ];
 
+    protected $table = 'reservations';
+
     public function user()
     {
         return $this->belongsTo(User::class);

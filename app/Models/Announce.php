@@ -19,6 +19,8 @@ class Announce extends Model
         'is_disponible'
     ];
 
+    protected $table = 'announces';
+
     public function user()
     {
         return $this->belongsTo(User::class);

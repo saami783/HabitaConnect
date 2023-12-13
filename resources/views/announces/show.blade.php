@@ -11,19 +11,17 @@
         </div>
         <div class="div-image">
             @if($announce->files->isEmpty())
-                <div class="image-not-found">
-                    <img src="{{ asset('images/images/no_image_disponible.svg' )}}" class="no_image_disponible" alt="image non disponible">
-                </div>
+                <img src="{{asset('images/images/no_image_disponible.svg')}}" alt="sans image" title="Aucune image disponible pour cette offre" class="offre_image">
             @else
                 @foreach($announce->files as $file)
-                    <div class="image-offre">
-                        <img src="{{ asset($file->file_path) }}" alt="Announce Image">
+
+                    <div class="div_offre_image">
+                        <img src="{{ asset($file->file_path) }}" alt="Announce Image" style="width:100px; height:auto;" class="offre_image">
                     </div>
                 @endforeach
             @endif
         </div>
 
-        {{--        Upper main section        --}}
 
         <section class="section-upper-main">
             <section class="section-left">
@@ -46,8 +44,7 @@
 
                 <div class="div-description">
                     <div class="div-all-logo">
-                        <img src="{{asset('images/logo_description.svg')}}" alt="logo adresse"
-                             class="all-logos_upper-main">
+                        <img src="{{asset('images/logo_description.svg')}}" alt="logo adresse" class="all-logos_upper-main">
                         <p>Description:</p>
                     </div>
                     <p class="card-text"><strong>{{ $announce->description }}</strong></p>
@@ -71,8 +68,7 @@
 
                 <div class="div-equipement">
                     <div class="div-all-logo">
-                        <img src="{{asset('images/logo_equipement.svg')}}" alt="logo adresse"
-                             class="all-logos_upper-main">
+                        <img src="{{asset('images/logo_equipement.svg')}}" alt="logo adresse" class="all-logos_upper-main">
                         <p>équipements:</p>
                     </div>
                     @foreach($equipments as $equipment)
@@ -82,128 +78,101 @@
                 </div>
             </section>
 
-
-            @auth
-                @if(auth()->user()->id == $announce->user_id)
-                    <section class="section-right-deja-reserve">
-                        <a href="{{ route('announces.edit', $announce) }}" class="btn btn-primary btn-modifier">Modifier
-                            mon annonce</a>
-
-                        {{-- Formulaire de suppression --}}
-                        <form action="{{ route('announces.destroy', $announce) }}" method="POST"
-                              onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');"
-                              style="width: 100%">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-supprimer">Supprimer</button>
-                        </form>
-                    </section>
-                @endif
-            @endauth
-
             <section class="section-right">
-                <div class="div-à-reserver">
-                    <h3><strong>Réservation</strong></h3>
-                    <hr style="color: #4a5568"/>
+                @auth
+                    @if(auth()->user()->id == $announce->user_id)
+                        <div class="div-deja-reserve">
+                            <a href="{{ route('announces.edit', $announce) }}" class="btn btn-primary">Modifier</a>
 
-                    <form method="POST" action="{{ route('reservations.store') }}">
-                        @csrf
-                        <div class="div-datefsectio-debut">
-                            <label for="begin_at">Date de début</label>
-                            <input type="date" class="form-control" id="begin_at" name="begin_at" required>
+                            {{-- Formulaire de suppression --}}
+                            <form action="{{ route('announces.destroy', $announce) }}" method="POST"
+                                  onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                            </form>
                         </div>
+                    @else
+                        <div class="div-à-reserver">
+                            <h3><strong>Réservation</strong></h3>
+                            <hr style="color: #4a5568" />
 
-                        <div class="div-date-fin">
-                            <label for="end_at">Date de fin</label>
-                            <input type="date" class="form-control" id="end_at" name="end_at" required>
+                            <form method="POST" action="{{ route('reservations.store') }}">
+                                @csrf
+                                <div class="div-date-debut">
+                                    <label for="begin_at">Date de début</label>
+                                    <input type="date" class="form-control" id="begin_at" name="begin_at" required>
+                                </div>
+
+                                <div class="div-date-fin">
+                                    <label for="end_at">Date de fin</label>
+                                    <input type="date" class="form-control" id="end_at" name="end_at" required>
+                                </div>
+
+                                <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}"
+                                       autocomplete="off">
+
+                                <p class="prix-par-nuit">Prix par nuit : {{ number_format($announce->price_per_night, 2) }} €</p>
+
+                                @if($announce->is_disponible)
+                                    <div class="div-btn-reserver">
+                                        <button type="submit" class="btn btn-reserver">Réserver</button>
+                                    </div>
+                                @else
+                                    <div class="div-imossible-de-reserver">
+                                        <p class="p-impossible_de_reserver"><b>Impossible de passer une réservation pour cette annonce car elle est insponible.</b> </p>
+                                    </div>
+                                @endif
+                            </form>
                         </div>
-
-                        <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}"
-                               autocomplete="off">
-
-                        <p class="prix-par-nuit">Prix par nuit
-                            : {{ number_format($announce->price_per_night, 2) }}
-                            €</p>
-
-                        @if($announce->is_disponible)
-                            <div class="div-btn-reserver">
-                                <button type="submit" class="btn btn-reserver">Réserver</button>
-                            </div>
-                        @else
-                            <div class="div-imossible-de-reserver">
-                                <p class="p-impossible_de_reserver"><b>Impossible de passer une réservation pour
-                                        cette annonce car elle est insponible.</b></p>
-                            </div>
-                        @endif
-                    </form>
-                </div>
+                    @endif
+                @endauth
             </section>
-
         </section>
 
-        <hr class="hr"/>
+        <hr style="margin-top: 40px"/>
 
-
-        <section id="div_avis">
-            <h1 style="color: lightcoral; margin-left: 30px"><strong>Section Avis</strong></h1>
-            @if($can_post_review)
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger div_alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                <form method="POST" action="{{ route('reviews.store') }}" enctype="multipart/form-data">
-                    @csrf
-
-                    <div class="div_avis_form">
-                        <div class="div_avis_text">
-                            <label for="note">Note sur 5</label>
-                            <input type="number" class="form-control" id="note" name="note" autocomplete="off" max="5"
-                                   min="1" maxlength="1" required>
-                        </div>
-
-                        <div class="div_avis_notes">
-                            <label for="content">Mon avis</label>
-                            <textarea class="form-control" id="content" name="content" autocomplete="off" rows="5"
-                                      required></textarea>
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}"
-                           autocomplete="off">
-                    <input type="hidden" name="user_id" id="user_id" value="{{ $announce->user_id }}"
-                           autocomplete="off">
-
-                    <div class="div_avis_submit">
-                        <p>bla bla bla bla bla bla bla bla bla bla bla </p>
-                        <button type="submit" class="btn">Envoyer mon avis</button>
-                    </div>
-                    <hr class="hr"/>
-                </form>
+        <h1 style="color: lightcoral"> <strong>Section Avis</strong></h1>
+        @if($can_post_review)
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
-        </section>
+            <form method="POST" action="{{ route('reviews.store') }}" enctype="multipart/form-data">
+                @csrf
 
+                <div class="form-group">
+                    <label for="review_content">Mon avis</label>
+                    <input type="text" class="form-control" id="review_content" name="review_content" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note sur 5</label>
+                    <input type="number" class="form-control" id="note" name="note" required>
+                </div>
 
+                <input type="hidden" name="announce_id" id="announce_id" value="{{ $announce->id }}" autocomplete="off">
+                <input type="hidden" name="user_id" id="user_id" value="{{ $announce->user_id }}" autocomplete="off">
+
+                <button type="submit">Envoyer mon avis </button>
+            </form>
+        @endif
 
         @if ($message = Session::get('success'))
-            <div class="alert alert-success div_alert-success">
-                <p><strong>{{ $message }}</strong></p>
+            <div class="alert alert-success">
+                <strong>{{ $message }}</strong>
             </div>
         @endif
 
-        <section class="section_commentaires">
-            @foreach($reviews as $review)
-                <img src="{{asset('images/logo_user.svg')}}" alt="logo adresse" class="logo_commentaire">
-                <div class="commentaire">
-                    <p class="user_mail" style="color: lightsalmon">{{ $review->user->email }}</p>
-                    <p class="user_commentaire"> Commentaire : {{ $review->content }}</p>
-                    <p class="user_note" style="color: lightseagreen"> Note : {{ $review->note }}</p>
-                </div>
-            @endforeach
-        </section>
+        @foreach($reviews as $review)
+            <p style="color: lightsalmon"> Utilisateur : {{ $review->user->email }}</p>
+            <p> Commentaire : {{ $review->content }}</p>
+            <p style="color: lightseagreen"> Note : {{ $review->note }}</p>
+        @endforeach
+
     </div>
 @endsection

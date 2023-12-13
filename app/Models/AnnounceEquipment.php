@@ -9,4 +9,6 @@ class AnnounceEquipment extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $table = 'announce_equipment';
 }

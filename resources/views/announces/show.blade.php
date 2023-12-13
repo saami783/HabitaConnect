@@ -75,11 +75,12 @@
                 </div>
             </section>
 
-            <section class="section-right">
+
                 @auth
                     @if(auth()->user()->id != $announce->user_id)
                         @include('partials.reservation_form', ['announce' => $announce])
                     @else
+                        <section class="section-right-deja-reserve">
                             <div class="div-deja-reserve">
                                 <a href="{{ route('announces.edit', $announce) }}" class="btn btn-primary">Modifier</a>
                                 <form action="{{ route('announces.destroy', $announce) }}" method="POST"
@@ -89,6 +90,7 @@
                                     <button type="submit" class="btn btn-danger">Supprimer</button>
                                 </form>
                             </div>
+                        </section>
                     @endif
                 @else
                     @include('partials.reservation_form', ['announce' => $announce])

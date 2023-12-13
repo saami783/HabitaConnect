@@ -33,7 +33,7 @@
                             <div class="div-links">
                                 @auth
                                     @if(in_array("ROLE_BUSINESS", auth()->user()->role))
-                                        <a href="{{ url('/announces/create') }}" class="reservation">
+                                        <a href="{{ url('/annonces/create') }}" class="reservation">
                                             <div class="div-reservation">
                                                 Publier une annonce
                                             </div>

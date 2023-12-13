@@ -32,6 +32,13 @@
                         @if (Route::has('login'))
                             <div class="div-links">
                                 @auth
+                                    @if(in_array("ROLE_BUSINESS", auth()->user()->role))
+                                        <a href="{{ url('/announces/create') }}" class="reservation">
+                                            <div class="div-reservation">
+                                                Publier une annonce
+                                            </div>
+                                        </a>
+                                    @endif
                                     <a href="{{ url('/reservations') }}" class="reservation">
                                         <div class="div-reservation">
                                             Mes réservations

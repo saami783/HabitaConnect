@@ -34,9 +34,6 @@
                     <x-nav-link :href="route('admin.reviews')" :active="request()->routeIs('dashboard')">
                         {{ __('Avis') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.reviews')" :active="request()->routeIs('dashboard')">
-                        {{ __('Avis') }}
-                    </x-nav-link>
                     @endif
                 </div>
             </div>

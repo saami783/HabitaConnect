@@ -1,4 +1,3 @@
-{{-- Assurez-vous que le layout 'welcome' contient les éléments Bootstrap nécessaires --}}
 @extends('welcome')
 <link href="{{ asset('css/detailOffre_CSS.css')}}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/style.css')}}" rel="stylesheet" type="text/css"/>
@@ -6,7 +5,6 @@
 @section('content')
     <div class="div-main">
         <div class="div-titre">
-            {{--     titre     --}}
             <h5 class="card-title">{{ $announce->title }}</h5>
         </div>
         <div class="div-image">

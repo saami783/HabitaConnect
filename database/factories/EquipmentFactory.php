@@ -84,6 +84,7 @@ class EquipmentFactory extends Factory
                 'Indisponible : Caméras de surveillance extérieure et/ou dans les espaces communs',
                 'Indisponible : Sèche-linge',
             ]),
+            'icon_path' => $this->faker->filePath()
         ];
     }
 }

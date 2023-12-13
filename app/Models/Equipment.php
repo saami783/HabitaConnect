@@ -11,7 +11,8 @@ class Equipment extends Model
 
     protected $fillable = [
         'id',
-        'name'
+        'name',
+        'icon_path'
     ];
     protected $table = 'equipments';
 

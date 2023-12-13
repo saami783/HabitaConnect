@@ -46,6 +46,10 @@ class ReservationController extends Controller
             'announce_id' => 'required|exists:announces,id',
         ]);
 
+        if (auth()->user()->id == $announce->user_id) {
+            return redirect()->route('announces.index')->with('Impossible');
+        }
+
         // Calcul de la différence en jours entre begin_at et end_at
         $daysDifference = (new DateTime($validatedData['begin_at']))->diff(new DateTime($validatedData['end_at']))->days;
 

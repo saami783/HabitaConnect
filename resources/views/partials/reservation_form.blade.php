@@ -1,3 +1,5 @@
+<link href="{{ asset('css/detailOffre_CSS.css')}}" rel="stylesheet" type="text/css"/>
+
 <section class="section-right">
     <div class="div-à-reserver">
         <h3><strong>Réservation</strong></h3>

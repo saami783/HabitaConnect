@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: Apple;
+    /*font-family: Apple;*/
 }
 
 .div-main{
@@ -15,8 +15,8 @@
 }
 
 .div-image{
-    height: 400px;
-    width: 80%;
+    height: 560px;
+    width: 90%;
     /*background-color: red;*/
     border: 1px solid #bebebe;
     box-shadow: 1px 4px 10px 0 rgba(12, 10, 10, 0.3);
@@ -24,18 +24,32 @@
     margin: 0 auto;
     margin-top: 30px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+
 }
 
-.image-not-found{
+
+.div_offre_image{
+    width: 48%;
+    height: 50%;
+}
+
+.offre_image{
     width: 100%;
     height: 100%;
 }
 
-.no_image_disponible{
-    margin: 0 auto;
-    width: 50%;
+.offre_image_detail{
+    width: 100%;
     height: 100%;
 }
+
+/*.no_image_disponible{*/
+/*    margin: 0 auto;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
 
 
 
@@ -94,10 +108,10 @@
 .section-right{
     position: sticky;
     /*z-index: 1;*/
-    top: 60px;
-    /*bottom: 20px;*/
+    top: 40px;
+    /*bottom: 50px;*/
     right: 0;
-    width: 450px;
+    width: 350px;
     height: 380px;
     margin: 20px 50px 0;
     background-color: orange;
@@ -106,7 +120,7 @@
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.section-right-deja-reserve{
+.section-right-annonce-publiee{
     position: sticky;
     /*z-index: 1;*/
     top: 150px;
@@ -155,18 +169,36 @@
     justify-content: center;
 }
 
-.btn{
-    border: 1px solid black;
-    width: 500px;
-}
-.btn:hover{
-    border: 1px solid black;
-    background-color: #02a602;
-}
+
+
 
 .btn, .btn-reserver{
-    border: 2px solid black;
+    border: 1px solid black;
+    background-color: #07c007;
+
 }
+
+.btn:hover{
+    border: 1px solid black;
+    background-color: #04a104;
+}
+
+
+
+.div-annonce-publiee{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 12px;
+}
+.btn_modifier, .btn_supprimer,.btn-reserver{
+    width: 90%;
+}
+
+.btn-reserver{
+    background-color: #07c007;
+}
+
 
 
 #div_avis{

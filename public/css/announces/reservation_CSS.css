@@ -1,0 +1,26 @@
+#reservation_item{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*.p_facture-lien:hover{*/
+/*    width: 150px;*/
+/*    height: 20px;*/
+/*    background-color: red;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+

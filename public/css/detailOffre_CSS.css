@@ -17,12 +17,28 @@
 .div-image{
     height: 400px;
     width: 80%;
-    background-color: red;
-    border: 1px solid transparent;
+    /*background-color: red;*/
+    border: 1px solid #bebebe;
+    box-shadow: 1px 4px 10px 0 rgba(12, 10, 10, 0.3);
     border-radius: 10px;
     margin: 0 auto;
     margin-top: 30px;
+    display: flex;
 }
+
+.image-not-found{
+    width: 100%;
+    height: 100%;
+}
+
+.no_image_disponible{
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+}
+
+
+
     /*  adresse logo */
 .div-adresse, .div-description, .div-utilisateur, .div-type-logement, .div-equipement, .div-prix{
     margin-top: 30px;
@@ -81,13 +97,32 @@
     top: 60px;
     /*bottom: 20px;*/
     right: 0;
-    width: 35%;
+    width: 450px;
     height: 380px;
     margin: 20px 50px 0;
     background-color: orange;
     border-radius: 10px;
     padding: 20px 30px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-right-deja-reserve{
+    position: sticky;
+    /*z-index: 1;*/
+    top: 150px;
+    /*bottom: 20px;*/
+    right: 0;
+    width: 35%;
+    height: 170px;
+    margin: 20px 50px 0;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
@@ -136,12 +171,14 @@
 
 #div_avis{
     margin-top: 20px;
+
 }
 
 #div_avis form{
     display: flex;
     margin-left: 80px;
-
+    margin-top: 30px;
+    height: 250px;
 }
 
 .div_avis_form{
@@ -184,14 +221,66 @@
     height: 40px;
 }
 
-/*.div_avis_submit button:hover{*/
-/*    background-color: #02a602;*/
-/*    border: 2px solid black;*/
-/*}*/
+
+.hr{
+    margin-top: 60px
+}
+
+.div_alert-danger{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.div_alert-danger ul{
+    margin-left: 30px;
+}
 
 
+.div_alert-success p{
+    margin-left: 40px;
+}
+
+.div-deja-reserve{
+    margin-left: 15px;
+}
+
+.btn-supprimer{
+    width:100%;
+}
+
+.btn-modifier{
+    width:100%;
+}
+
+                                            /*   Commentaires   */
+
+.section_commentaires{
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 100%;
+}
 
 
+.commentaire{
+    position: relative;
+    bottom: 50px;
+    left: 50px;
+}
+
+
+.logo_commentaire {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.user_note{
+    order: 2;
+}
+
+.user_commentaire{
+    order: 3;
+}
 
 
 

@@ -19,68 +19,52 @@
         </style>
     </head>
 
-    <body class="antialiased">
+    <body>
             <header>
                 <div class="header">
-                    <div class="header-group">
-                        <div class="div-logo">
-                            <a href="{{ url('/') }}" class="">
-                                <img src="{{asset('images/logo.svg')}}" alt="logo" class="logo" title="Aller à la page d'accueil">
-                            </a>
-                        </div>
-
-                        @if (Route::has('login'))
-                            <div class="div-links">
-                                @auth
-                                    @if(in_array("ROLE_BUSINESS", auth()->user()->role))
-                                        <a href="{{ url('/annonces/create') }}" class="reservation">
-                                            <div class="div-reservation">
-                                                Publier une annonce
-                                            </div>
-                                        </a>
-                                    @endif
-                                    <a href="{{ url('/reservations') }}" class="reservation">
-                                        <div class="div-reservation">
-                                            Mes réservations
-                                        </div>
-                                    </a>
-
-                                    <a href="{{ url('/profile') }}" class="profil">
-                                        <div class="div-profil">
-                                            Mon profil
-                                        </div>
-                                    </a>
-
-                                    <a href="{{ route('logout') }}" class="deconnecter" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <div class="div-deconnecter">
-                                            Se déconnecter
-                                        </div>
-                                    </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        @else
-                            <div class="div-links">
-                                <a href="{{ route('login') }}" class="connexion">
-                                    <div class="div-connexion">
-                                            Connexion
-                                    </div>
-                                </a>
-
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="inscription">
-                                        <div class="div-inscription">
-                                            Inscription
-                                        </div>
-                                    </a>
-                                @endif
-                            </div>
-                        @endauth
-                        @endif
-
+                    <div class="div-logo">
+                        <a href="{{ url('/') }}" class="">
+                            <img src="{{asset('images/logo.svg')}}" alt="logo" class="logo" title="Aller à la page d'accueil">
+                        </a>
                     </div>
 
+                    @if (Route::has('login'))
+                        <div class="div-links">
+                            @auth
+                                @if(in_array("ROLE_BUSINESS", auth()->user()->role))
+                                    <a href="{{ url('/annonces/create') }}" class="link">
+                                            Publier une annonce
+                                    </a>
+                                @endif
+                                <a href="{{ url('/reservations') }}" class="link">
+                                        Mes réservations
+                                </a>
+
+                                <a href="{{ url('/profile') }}" class="link">
+                                        Mon profil
+                                </a>
+
+                                <a href="{{ route('logout') }}" class="link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        Se déconnecter
+                                </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    @else
+                        <div class="div-links">
+                            <a href="{{ route('login') }}" class="link">
+                                        Connexion
+                            </a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="link">
+                                        Inscription
+                                </a>
+                            @endif
+                        </div>
+                    @endauth
+                    @endif
                 </div>
             </header>
 
@@ -89,5 +73,11 @@
                     @yield('content')
                 </section>
             </main>
+
+            <footer>
+                <section class="footer">
+                    <p>Ici, C'est le footer Monsieur LETTELIER</p>
+                </section>
+            </footer>
         </body>
 </html>

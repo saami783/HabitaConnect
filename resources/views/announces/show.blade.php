@@ -199,8 +199,8 @@
                 <img src="{{asset('images/logo_user.svg')}}" alt="logo adresse" class="logo_commentaire">
                 <div class="commentaire">
                     <p class="user_mail" style="color: lightsalmon">{{ $review->user->email }}</p>
-                    <p class="user_commentaire"> Commentaire : {{ $review->content }}</p>
-                    <p class="user_note" style="color: lightseagreen"> Note : {{ $review->note }}</p>
+                    <p class="user_commentaire" style="margin-left: 10px"> {{ $review->content }}</p>
+                    <p class="user_note" style="color: lightseagreen;margin-left: 10px" > Note : {{ $review->note }}</p>
                 </div>
             @endforeach
         </section>

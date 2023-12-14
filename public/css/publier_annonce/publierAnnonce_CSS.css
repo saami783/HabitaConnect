@@ -1,0 +1,52 @@
+.form-group{
+    margin-bottom: 30px;
+}
+
+.attention_message{
+    height: 110px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #232222;
+    color: white;
+    display: flex ;
+    gap: 20px;
+    /*align-items: center;*/
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+.warning_image{
+    margin-top: 2px;
+}
+.warning_message{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.warning_left_color_yellow{
+    content: "";
+    min-width: 10px;
+    background-color: #e8ac00;
+    border-radius: 5px;
+}
+
+.container{
+    margin-bottom: 60px;
+}
+
+/*.mt-5{*/
+/*    margin:0 ;*/
+/*}*/
+
+.btn_envoyer_mon_annonce{
+    width: 200px;
+    height: 50px;
+    border: 1px solid #1a202c ;
+    background:red;
+}
+/*linear-gradient(to left,#a9e3e3, #a4b7b7) ;*/

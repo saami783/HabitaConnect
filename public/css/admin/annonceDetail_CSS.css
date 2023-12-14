@@ -1,0 +1,26 @@
+.page-actions{
+    display: flex;
+    width: 500px;
+    justify-content: space-around
+}
+
+.action-index, .action-edit{
+    width: 500px;
+    height: 40px;
+    padding: 0;
+;
+}
+
+.action-delete{
+    margin:-4px;
+    height: 20px;
+    width:100px;
+}
+
+
+.action-delete:hover{
+
+}
+
+
+/*btn-outline-danger*/

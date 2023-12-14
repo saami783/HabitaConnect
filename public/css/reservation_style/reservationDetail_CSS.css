@@ -1,0 +1,23 @@
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#reservation_item{
+    margin: 0 auto;
+    padding: 20px 80px;
+    width: 60%;
+    height: 400px;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 200px;
+    border-radius: 10px;
+}
+
+.div_buttons{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

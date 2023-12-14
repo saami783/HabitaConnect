@@ -1,10 +1,59 @@
-h1{
-    text-align: center;
+.h1{
+    margin: 0 auto;
     font-size: 30px;
 }
 
 .main{
     width: 80%;
+    min-height: 600px;
     margin: 0 auto;
     margin-top:30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+.reservation_detail{
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: 1.5s;
+}
+
+
+.reservation_detail:hover{
+    transform: translateY(-6px);
+    transition: transform 1s;
+}
+
+
+
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+.voir_detail{
+    height: 40px;
+    width: 170px;
+    color: black;
+    background: #acc6aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.voir_detail:hover{
+    text-decoration: none;
+    color: black;
+}
+

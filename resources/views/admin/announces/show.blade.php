@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+<link href="{{ asset('css/admin/annonceDetail_CSS.css') }}" rel="stylesheet" type="text/css">
 @section('title')
     {{ __('Annonces') }}
 @endsection
@@ -42,7 +42,7 @@
                             @csrf
                             @method('DELETE')
                         </form>
-                        <a class="dropdown-item action-delete" href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $announce->id }}').submit();"><span class="action-label btn btn-outline-danger">Supprimer</span></a>
+                        <a class="action-delete dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $announce->id }}').submit();"><span class="action-label btn " style="background-color: red; color: white; margin:0">Supprimer</span></a>
 
                     </div>
                 </div>

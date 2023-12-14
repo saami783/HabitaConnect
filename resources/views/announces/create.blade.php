@@ -26,12 +26,12 @@
 
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" required>
+                <input type="text" class="form-control" id="title" name="title" placeholder="saisir le titre de annonce" required>
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                <textarea class="form-control" id="description" name="description" placeholder="saisir les informations iportantes concernant votre logement" rows="3" required></textarea>
             </div>
 
             <div class="form-group">
@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn_envoyer_mon_annonce ">Envoyer mon annonce</button>
+            <button type="submit" class="btn_envoyer_mon_annonce " style="background-color:#cbdfe3;">Envoyer mon annonce</button>
         </form>
     </div>
 @endsection

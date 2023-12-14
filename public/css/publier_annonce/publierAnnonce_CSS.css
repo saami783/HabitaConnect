@@ -3,21 +3,21 @@
 }
 
 .attention_message{
-    height: 110px;
+    height: 80px;
     width: 70%;
     margin: 0 auto;
     background-color: #232222;
     color: white;
     display: flex ;
     gap: 20px;
-    /*align-items: center;*/
     border-radius: 5px;
     border: 1px solid black;
 }
 
 
 .warning_image{
-    margin-top: 2px;
+    display: flex;
+    align-items: center;
 }
 .warning_message{
     margin-left: 10px;
@@ -47,6 +47,16 @@
     width: 200px;
     height: 50px;
     border: 1px solid #1a202c ;
-    background:red;
+
+    margin: 0 auto;
 }
-/*linear-gradient(to left,#a9e3e3, #a4b7b7) ;*/
+
+
+
+
+.btn_envoyer_mon_annonce:hover{
+    background: linear-gradient(to left,#a9e3e3, #a4b7b7) ;;
+}
+
+
+

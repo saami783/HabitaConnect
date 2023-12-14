@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="h1">
-        <h1><strong>Mes reservations</strong></h1>
+        <h1><strong>Mes réservations</strong></h1>
     </div>
     <div class="main">
         @foreach($reservations as $reservation)

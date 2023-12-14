@@ -88,7 +88,7 @@
                                       onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn_supprimer btn btn-danger">Supprimer</button>
+                                    <button type="submit" class="btn_supprimer btn btn-danger" style="background-color: red">Supprimer</button>
                                 </form>
                             </div>
                         </section>

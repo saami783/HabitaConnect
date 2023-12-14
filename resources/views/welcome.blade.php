@@ -76,7 +76,6 @@
 
             <footer>
                 <section class="footer">
-                    <p>Ici, C'est le footer Monsieur LETTELIER</p>
                 </section>
             </footer>
         </body>

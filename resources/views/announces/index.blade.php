@@ -21,6 +21,7 @@
             <div class="offre_detail">
                 {{ $announce->title }}</a>
                 <p><a href="{{ route('announces.show', $announce) }}">{{$announce->price }}</a></p>
+
         </section>
     @endforeach
     <section id="pagination">
